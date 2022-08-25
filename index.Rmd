@@ -1,0 +1,222 @@
+---
+title: "Jonas Graf, M.D."
+author: "Portfolio"
+output: 
+  html_document: 
+    highlight: tango
+    theme: cosmo
+    toc: yes
+    toc_float: yes
+---
+
+<style>
+.list-group-item.active, .list-group-item.active:hover, .list-group-item.active:focus {
+    z-index: 2;
+    color: #ffffff;
+    background-color: #3fb618;
+    border-color: #dddddd;
+}
+</style>
+<style>
+a:hover, a:focus {
+    color: #3fb618;
+    text-decoration: underline;
+}
+</style>
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r, echo=F}
+library("scholar")
+```
+
+```{r, echo=F}
+library("knitr")
+```
+
+```{r, echo=F, message=FALSE}
+library("tidyverse")
+```
+
+
+
+***
+
+
+
+<br><br><br><br>
+
+***
+
+
+### Introduction
+**Clinician** **scientist** focusing on neuroimmunology as well as health administrative data science and pharmacoepidemiology.
+ <br><br>
+Special interest in **multiple sclerosis**.
+  <br><br>
+Performing research at <a href="https://www.hhu.de/">**HHU**</a> Düsseldorf, Germany and <a href="https://www.ubc.ca/">**UBC**</a> Vancouver, Canada.
+
+  ***
+  <br><br><br><br>
+  
+  ***
+  
+### The Basics
+
+  <div class = "row">
+  <div class = "col-md-4">
+  <a rel="me" href="https://twitter.com/Jonas_Graf_MD">View My Twitter Profile</a>
+  <br><br>
+  <a rel="me" href="https://scholar.social/@jonasgraf">View My Mastodon Profile</a>
+  <br><br>
+  <a rel="me" href="https://scholar.google.com/citations?user=J5AuPUQAAAAJ&hl=de">View My Google Scholar Profile</a>
+  <br><br>
+  <a  rel="me" href="https://orcid.org/0000-0002-4249-4665">View My ORCID Profile</a>
+  <br><br>
+  <a href="https://docserv.uni-duesseldorf.de/servlets/DerivateServlet/Derivate-45555/Graf%2C%20Jonas%20Dissertation%202017.pdf">Read My Thesis</a>
+    <br><br>
+  <a href="https://drive.google.com/file/d/1ib1m0Lj6MLPtUn5tvU-_QyRQA3SqwjeX/view">Read My CV</a>
+  <br><br>
+  </div>
+  <div class = "col-md-4">
+  <img src="./images/logo.png"  width="150"/>
+  </div>
+  </div>
+  ***
+  <br><br><br><br>
+  
+  ***
+  
+
+*“I do not know what I may appear to the world, but to myself I seem to have been
+only like a boy playing on the sea-shore, and diverting myself in now and then
+finding a smoother pebble or a prettier shell than ordinary, whilst the great ocean
+of truth lay all undiscovered before me.”*
+<br><br>
+― Sir Isaac Newton
+
+***
+
+<br><br><br><br>
+
+
+***
+
+
+### Scientific Achievements
+
+```{r, echo=F}
+data.frame(get_profile("J5AuPUQAAAAJ")[4:6]) %>% kable(format = "simple", align = 'c', caption="Summary Metrics", col.names=c("Total Citations", "h-index", "i10-index"))
+```
+  
+  ***
+  <br><br><br><br>
+  
+  ***
+  
+  
+### Citation Trend
+
+```{r, echo=F, message=FALSE, fig.width = 6, fig.height = 4}
+library(ggplot2)
+library(plotly)
+p<-ggplot(get_citation_history("J5AuPUQAAAAJ")[1:7,], aes(year, cites)) + geom_line() + geom_point()
+ggplotly(p) %>% layout(margin=list(l = 60,r = 60,b = 60,t = 60,pad = 4))
+
+```
+  
+ 
+
+  ***
+  <br><br><br><br>
+  
+  ***
+  
+### Publications
+
+```{r, echo=F, fig.width = 6, fig.height = 4}
+tab<-data.frame(get_publications("J5AuPUQAAAAJ", sortby = "year")[,c(6,1,2,3,5)]) %>% arrange(desc(year))
+tab$journal[tab$journal=="MULTIPLE SCLEROSIS JOURNAL"]<-"Multiple Sclerosis Journal"
+tab$journal[tab$journal=="Journal of neurology"]<-"Journal of Neurology"
+tab %>% kable(format = "simple", align = 'c', caption="Overview", col.names=c("Year", "Title", "Authors", "Journal", "Cites" ))  
+  
+
+
+```
+
+ ***
+  <br><br><br><br>
+  
+  ***
+
+### Congress Contributions
+
+```{r, echo=F}
+data.frame(Year= c("2017", "2018","2019", "2019", "2020", "2021", "2021", "2022"), Congress=c("DGN", "DGN", "DGN", "AAN","AAN", "ECTRIMS", "Charcot", "ACTRIMS"), Place=c("Leipzig","Berlin","Stuttgart","Philadelphia","Toronto","Vienna","Baveno","Palm Beach"), Presentation=c("Talk","Talk","ePoster","Posters","ePoster","ePoster","ePoster/Talk","ePoster")) %>% arrange(desc(Year)) %>% kable(format = "simple", align = 'c', caption="Overview") 
+```
+
+
+
+^Key:^ ^DGN,^ ^Deutsche^ ^Gesellschaft^ ^für^ ^Neurologie;^ ^AAN,^ ^American^ ^Academy^ ^of^ ^Neurology;^ ^E/ACTRIMS,^ ^European/Americas^ ^Committee^ ^for^ ^Treatment^ ^and^ ^Research^ ^in^ ^MS.^
+
+<a href="https://www.abstractsonline.com/pp8/#!/10495/presentation/513">Link</a> to my 2022 ACTRIMS Forum abstract.
+<br>
+<a href="https://www.charcot-ms.org/files/16_ECF2021_Poster_EP_Graf_J.pdf">Link</a> to my 2021 Charcot Annual Meeting poster presentation.
+
+
+  ***
+  <br><br><br><br>
+  
+  ***
+  
+  
+  
+  
+### Acknowledgment
+```{r, echo=F, message=FALSE, warning=FALSE, fig.align = 'center', fig.width = 6, fig.height = 4}
+set.seed(550, sample.kind = "Rounding")
+library(ggplot2)
+library(RColorBrewer)
+ngroup<-60
+names<-paste("G_",seq(1,ngroup),sep="")
+authors<-c("Huah Shin Ng", "Feng Zhu", "Yinshan Zhao", "José Wijnands", "Charity Evans", "John Fisk", "Ruth Ann Marrie", "Helen Tremlett", "Hans-Peter Hartung", "Orhan Aktas", "Philipp Albrecht", "Sven Meuth", "Marius Ringelstein", "Joachim Havla", "Jens Ingwersen","Markus Krämer")
+DAT<-data.frame()
+for(i in seq(1:80)){
+  data=data.frame(matrix(0, ngroup, 3))
+  data[,1]=i
+  data[,2]=sample(names, nrow(data))
+  data[,3]=prop.table(sample(c(rep(0,100),c(1:ngroup)),nrow(data)))
+  data[,4]=(data[,3])^2
+  data[,5]=sample(authors, nrow(data), replace = TRUE)
+  DAT=rbind(DAT,data)
+}
+colnames(DAT)=c("Year","Group","Value","Factor", "Authors")
+DAT<-DAT[order(DAT$Year, DAT$Group) , ]
+DAT<-DAT[DAT$Value>0,]
+coul<-brewer.pal(9, "Greys") 
+coul<-colorRampPalette(coul)(ngroup)
+coul<-coul[sample(c(1:length(coul)) , size=length(coul) ) ]
+ggplotly(ggplot(DAT, aes(x=Year, y=Value, colour=Group, size=Factor, text=Authors))+ 
+  geom_point(alpha=1/5)+
+  theme_bw() +
+  scale_color_manual(values = coul)+
+  theme(
+    text = element_blank(),
+    line = element_blank(),
+    title = element_blank(),
+    legend.position="none",
+    panel.border = element_blank(),
+    plot.margin = margin(0, 0, 0, 0, "cm"),
+    panel.background = element_blank()), tooltip='text')
+```
+I would like to express my sincere appreciation to my collaboration partners. My scientific endeavors and accomplishments would not have been possible without them. Thank you very much!<br><br>
+
+
+*“Gratitude is not only the greatest of virtues, but the parent of all others.”*
+<br><br>
+― Marcus Tullius Cicero 
+
+
+  ***
