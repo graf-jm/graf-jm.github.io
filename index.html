@@ -1,0 +1,912 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<meta charset="utf-8" />
+<meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+
+
+<meta name="author" content="Portfolio" />
+
+
+<title>Jonas Graf, M.D.</title>
+
+<script src="site_libs/header-attrs-2.14/header-attrs.js"></script>
+<script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="site_libs/bootstrap-3.3.5/css/cosmo.min.css" rel="stylesheet" />
+<script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<style>h1 {font-size: 34px;}
+       h1.title {font-size: 38px;}
+       h2 {font-size: 30px;}
+       h3 {font-size: 24px;}
+       h4 {font-size: 18px;}
+       h5 {font-size: 16px;}
+       h6 {font-size: 12px;}
+       code {color: inherit; background-color: rgba(0, 0, 0, 0.04);}
+       pre:not([class]) { background-color: white }</style>
+<script src="site_libs/jqueryui-1.11.4/jquery-ui.min.js"></script>
+<link href="site_libs/tocify-1.9.1/jquery.tocify.css" rel="stylesheet" />
+<script src="site_libs/tocify-1.9.1/jquery.tocify.js"></script>
+<script src="site_libs/navigation-1.1/tabsets.js"></script>
+<script src="site_libs/htmlwidgets-1.5.4/htmlwidgets.js"></script>
+<script src="site_libs/plotly-binding-4.10.0/plotly.js"></script>
+<script src="site_libs/typedarray-0.1/typedarray.min.js"></script>
+<link href="site_libs/crosstalk-1.2.0/css/crosstalk.min.css" rel="stylesheet" />
+<script src="site_libs/crosstalk-1.2.0/js/crosstalk.min.js"></script>
+<link href="site_libs/plotly-htmlwidgets-css-2.5.1/plotly-htmlwidgets.css" rel="stylesheet" />
+<script src="site_libs/plotly-main-2.5.1/plotly-latest.min.js"></script>
+
+<style type="text/css">
+  code{white-space: pre-wrap;}
+  span.smallcaps{font-variant: small-caps;}
+  span.underline{text-decoration: underline;}
+  div.column{display: inline-block; vertical-align: top; width: 50%;}
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  ul.task-list{list-style: none;}
+    </style>
+
+
+
+
+
+
+
+
+
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+img {
+  max-width:100%;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+.html-widget {
+  margin-bottom: 20px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+summary {
+  display: list-item;
+}
+details > summary > p:only-child {
+  display: inline;
+}
+pre code {
+  padding: 0;
+}
+</style>
+
+
+
+<!-- tabsets -->
+
+<style type="text/css">
+.tabset-dropdown > .nav-tabs {
+  display: inline-table;
+  max-height: 500px;
+  min-height: 44px;
+  overflow-y: auto;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs > li.active:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
+  content: "&#xe258;";
+  border: none;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs > li.active {
+  display: block;
+}
+
+.tabset-dropdown > .nav-tabs > li > a,
+.tabset-dropdown > .nav-tabs > li > a:focus,
+.tabset-dropdown > .nav-tabs > li > a:hover {
+  border: none;
+  display: inline-block;
+  border-radius: 4px;
+  background-color: transparent;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li {
+  display: block;
+  float: none;
+}
+
+.tabset-dropdown > .nav-tabs > li {
+  display: none;
+}
+</style>
+
+<!-- code folding -->
+
+
+
+<style type="text/css">
+
+#TOC {
+  margin: 25px 0px 20px 0px;
+}
+@media (max-width: 768px) {
+#TOC {
+  position: relative;
+  width: 100%;
+}
+}
+
+@media print {
+.toc-content {
+  /* see https://github.com/w3c/csswg-drafts/issues/4434 */
+  float: right;
+}
+}
+
+.toc-content {
+  padding-left: 30px;
+  padding-right: 40px;
+}
+
+div.main-container {
+  max-width: 1200px;
+}
+
+div.tocify {
+  width: 20%;
+  max-width: 260px;
+  max-height: 85%;
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  div.tocify {
+    width: 25%;
+  }
+}
+
+@media (max-width: 767px) {
+  div.tocify {
+    width: 100%;
+    max-width: none;
+  }
+}
+
+.tocify ul, .tocify li {
+  line-height: 20px;
+}
+
+.tocify-subheader .tocify-item {
+  font-size: 0.90em;
+}
+
+.tocify .list-group-item {
+  border-radius: 0px;
+}
+
+
+</style>
+
+
+
+</head>
+
+<body>
+
+
+<div class="container-fluid main-container">
+
+
+<!-- setup 3col/9col grid for toc_float and main content  -->
+<div class="row">
+<div class="col-xs-12 col-sm-4 col-md-3">
+<div id="TOC" class="tocify">
+</div>
+</div>
+
+<div class="toc-content col-xs-12 col-sm-8 col-md-9">
+
+
+
+
+<div id="header">
+
+
+
+<h1 class="title toc-ignore">Jonas Graf, M.D.</h1>
+<h4 class="author">Portfolio</h4>
+
+</div>
+
+
+<style>
+.list-group-item.active, .list-group-item.active:hover, .list-group-item.active:focus {
+    z-index: 2;
+    color: #ffffff;
+    background-color: #3fb618;
+    border-color: #dddddd;
+}
+</style>
+<style>
+a:hover, a:focus {
+    color: #3fb618;
+    text-decoration: underline;
+}
+</style>
+<hr />
+<p><br><br><br><br></p>
+<hr />
+<div id="introduction" class="section level3">
+<h3>Introduction</h3>
+<p><br><br> <strong>Clinician</strong> <strong>scientist</strong>
+focusing on neuroimmunology as well as health administrative data
+science and pharmacoepidemiology. <br><br> Special interest in
+<strong>multiple sclerosis</strong>. <br><br> Performing research at
+<a href="https://www.hhu.de/"><strong>HHU</strong></a> Düsseldorf,
+Germany and <a href="https://www.ubc.ca/"><strong>UBC</strong></a>
+Vancouver, Canada.</p>
+<hr />
+<p><br><br><br><br></p>
+<hr />
+</div>
+<div id="the-basics" class="section level3">
+<h3>The Basics</h3>
+<br><br>
+<div class="row">
+<div class="col-md-4">
+<a rel="me" href="https://twitter.com/Jonas_Graf_MD">View My Twitter
+Profile</a> <br><br>
+<a rel="me" href="https://scholar.social/@jonasgraf">View My Mastodon
+Profile</a> <br><br>
+<a rel="me" href="https://scholar.google.com/citations?user=J5AuPUQAAAAJ&hl=de">View
+My Google Scholar Profile</a> <br><br>
+<a  rel="me" href="https://orcid.org/0000-0002-4249-4665">View My ORCID
+Profile</a> <br><br>
+<a href="https://docserv.uni-duesseldorf.de/servlets/DerivateServlet/Derivate-45555/Graf%2C%20Jonas%20Dissertation%202017.pdf">Read
+My Thesis</a> <br><br>
+<a href="https://drive.google.com/file/d/1HyigYJmFxM_YerFHSy1AFf7Ld3IcUCCG/view">Read
+My CV</a> <br><br>
+</div>
+<div class="col-md-4">
+<img src="images/logo.jpg"  width="190"/>
+</div>
+</div>
+<hr />
+<p><br><br><br><br></p>
+<hr />
+<p><em>“I do not know what I may appear to the world, but to myself I
+seem to have been only like a boy playing on the sea-shore, and
+diverting myself in now and then finding a smoother pebble or a prettier
+shell than ordinary, whilst the great ocean of truth lay all
+undiscovered before me.”</em> <br><br> ― Sir Isaac Newton</p>
+<hr />
+<p><br><br><br><br></p>
+<hr />
+</div>
+<div id="scientific-achievements" class="section level3">
+<h3>Scientific Achievements</h3>
+<table>
+<caption>Summary Metrics</caption>
+<thead>
+<tr class="header">
+<th align="center">Total Citations</th>
+<th align="center">h-index</th>
+<th align="center">i10-index</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center">511</td>
+<td align="center">14</td>
+<td align="center">17</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<p><br><br><br><br></p>
+<hr />
+</div>
+<div id="citation-trend" class="section level3">
+<h3>Citation Trend</h3>
+<div id="htmlwidget-682e0c66618e29206acb" style="width:576px;height:384px;" class="plotly html-widget"></div>
+<script type="application/json" data-for="htmlwidget-682e0c66618e29206acb">{"x":{"data":[{"x":[2015,2016,2017,2018,2019,2020,2021],"y":[4,16,22,38,53,87,142],"text":["year: 2015<br />cites:   4","year: 2016<br />cites:  16","year: 2017<br />cites:  22","year: 2018<br />cites:  38","year: 2019<br />cites:  53","year: 2020<br />cites:  87","year: 2021<br />cites: 142"],"type":"scatter","mode":"lines+markers","line":{"width":1.88976377952756,"color":"rgba(0,0,0,1)","dash":"solid"},"hoveron":"points","showlegend":false,"xaxis":"x","yaxis":"y","hoverinfo":"text","marker":{"autocolorscale":false,"color":"rgba(0,0,0,1)","opacity":1,"size":5.66929133858268,"symbol":"circle","line":{"width":1.88976377952756,"color":"rgba(0,0,0,1)"}},"frame":null}],"layout":{"margin":{"t":60,"r":60,"b":60,"l":60,"pad":4},"plot_bgcolor":"rgba(235,235,235,1)","paper_bgcolor":"rgba(255,255,255,1)","font":{"color":"rgba(0,0,0,1)","family":"","size":14.6118721461187},"xaxis":{"domain":[0,1],"automargin":true,"type":"linear","autorange":false,"range":[2014.7,2021.3],"tickmode":"array","ticktext":["2016","2018","2020"],"tickvals":[2016,2018,2020],"categoryorder":"array","categoryarray":["2016","2018","2020"],"nticks":null,"ticks":"outside","tickcolor":"rgba(51,51,51,1)","ticklen":3.65296803652968,"tickwidth":0.66417600664176,"showticklabels":true,"tickfont":{"color":"rgba(77,77,77,1)","family":"","size":11.689497716895},"tickangle":-0,"showline":false,"linecolor":null,"linewidth":0,"showgrid":true,"gridcolor":"rgba(255,255,255,1)","gridwidth":0.66417600664176,"zeroline":false,"anchor":"y","title":{"text":"year","font":{"color":"rgba(0,0,0,1)","family":"","size":14.6118721461187}},"hoverformat":".2f"},"yaxis":{"domain":[0,1],"automargin":true,"type":"linear","autorange":false,"range":[-2.9,148.9],"tickmode":"array","ticktext":["0","50","100"],"tickvals":[0,50,100],"categoryorder":"array","categoryarray":["0","50","100"],"nticks":null,"ticks":"outside","tickcolor":"rgba(51,51,51,1)","ticklen":3.65296803652968,"tickwidth":0.66417600664176,"showticklabels":true,"tickfont":{"color":"rgba(77,77,77,1)","family":"","size":11.689497716895},"tickangle":-0,"showline":false,"linecolor":null,"linewidth":0,"showgrid":true,"gridcolor":"rgba(255,255,255,1)","gridwidth":0.66417600664176,"zeroline":false,"anchor":"x","title":{"text":"cites","font":{"color":"rgba(0,0,0,1)","family":"","size":14.6118721461187}},"hoverformat":".2f"},"shapes":[{"type":"rect","fillcolor":null,"line":{"color":null,"width":0,"linetype":[]},"yref":"paper","xref":"paper","x0":0,"x1":1,"y0":0,"y1":1}],"showlegend":false,"legend":{"bgcolor":"rgba(255,255,255,1)","bordercolor":"transparent","borderwidth":1.88976377952756,"font":{"color":"rgba(0,0,0,1)","family":"","size":11.689497716895}},"hovermode":"closest","barmode":"relative"},"config":{"doubleClick":"reset","modeBarButtonsToAdd":["hoverclosest","hovercompare"],"showSendToCloud":false},"source":"A","attrs":{"64888d765c":{"x":{},"y":{},"type":"scatter"},"6486d5f5eee":{"x":{},"y":{}}},"cur_data":"64888d765c","visdat":{"64888d765c":["function (y) ","x"],"6486d5f5eee":["function (y) ","x"]},"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.2,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
+<hr />
+<p><br><br><br><br></p>
+<hr />
+</div>
+<div id="publications" class="section level3">
+<h3>Publications</h3>
+<table>
+<caption>Overview</caption>
+<thead>
+<tr class="header">
+<th align="center">Year</th>
+<th align="center">Title</th>
+<th align="center">Authors</th>
+<th align="center">Journal</th>
+<th align="center">Cites</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center">2022</td>
+<td align="center">Disease-modifying Drug Uptake and Health Service Use
+in the Ageing MS Population</td>
+<td align="center">J Graf, H Ng, F Zhu, E Kingwell, O Aktas, P Albrecht,
+H Hartung, S Meuth, …</td>
+<td align="center">Multiple Sclerosis Journal</td>
+<td align="center">0</td>
+</tr>
+<tr class="even">
+<td align="center">2022</td>
+<td align="center">Emergency department use by persons with MS: A
+population-based descriptive study with a focus on infection-related
+visits</td>
+<td align="center">J Graf, HS Ng, F Zhu, Y Zhao, JMA Wijnands, C Evans,
+JD Fisk, RA Marrie, …</td>
+<td align="center">Multiple Sclerosis Journal</td>
+<td align="center">0</td>
+</tr>
+<tr class="odd">
+<td align="center">2022</td>
+<td align="center">The degree of cortical plasticity correlates with
+cognitive performance in patients with Multiple Sclerosis</td>
+<td align="center">C Balloff, IK Penner, M Ma, I Georgiades, L Scala, N
+Troullinakis, J Graf, …</td>
+<td align="center">Brain stimulation</td>
+<td align="center">1</td>
+</tr>
+<tr class="even">
+<td align="center">2022</td>
+<td align="center">CNS Involvement in Chronic Inflammatory Demyelinating
+Polyneuropathy: Subtle Retinal Changes in Optical Coherence
+Tomography</td>
+<td align="center">J Ingwersen, J Graf, J Kluge, M Weise, M Dietrich, JI
+Lee, J Harmel, …</td>
+<td align="center">Neurology-Neuroimmunology Neuroinflammation</td>
+<td align="center">2</td>
+</tr>
+<tr class="odd">
+<td align="center">2021</td>
+<td align="center">Emergency department visits by persons with MS: a
+population-based study</td>
+<td align="center">J Graf, HS Ng, F Zhu, Y Zhao, JMA Wijnands, C Evans,
+JD Fisk, RA Marrie, …</td>
+<td align="center">Multiple Sclerosis Journal</td>
+<td align="center">0</td>
+</tr>
+<tr class="even">
+<td align="center">2021</td>
+<td align="center">Association of retinal layer thickness with cognition
+in patients with multiple sclerosis</td>
+<td align="center">SJ Baetge, M Dietrich, M Filser, A Renner, N Stute, M
+Gasis, M Weise, …</td>
+<td align="center">Neurology-Neuroimmunology Neuroinflammation</td>
+<td align="center">6</td>
+</tr>
+<tr class="odd">
+<td align="center">2021</td>
+<td align="center">Targeting B cells to modify MS, NMOSD, and MOGAD:
+Part 2.</td>
+<td align="center">J Graf, J Mares, M Barnett, O Aktas, P Albrecht, SS
+Zamvil, HP Hartung</td>
+<td align="center">Neurology-Neuroimmunology Neuroinflammation</td>
+<td align="center">3</td>
+</tr>
+<tr class="even">
+<td align="center">2021</td>
+<td align="center">Disease-Modifying Drug Uptake and Health Service Use
+in the Ageing MS Population</td>
+<td align="center">HS Ng, J Graf, F Zhu, E Kingwell, O Aktas, P
+Albrecht, HP Hartung, …</td>
+<td align="center">Frontiers in immunology</td>
+<td align="center">2</td>
+</tr>
+<tr class="odd">
+<td align="center">2021</td>
+<td align="center">Targeting B cells to modify MS, NMOSD, and MOGAD:
+part 1</td>
+<td align="center">J Graf, J Mares, M Barnett, O Aktas, P Albrecht, SS
+Zamvil, HP Hartung</td>
+<td align="center">Neurology-Neuroimmunology Neuroinflammation</td>
+<td align="center">38</td>
+</tr>
+<tr class="even">
+<td align="center">2021</td>
+<td align="center">Relapse-independent multiple sclerosis progression
+under natalizumab</td>
+<td align="center">J Graf, VI Leussink, G Soncin, K Lepka, I Meinl, T
+Kümpfel, SG Meuth, …</td>
+<td align="center">Brain communications</td>
+<td align="center">5</td>
+</tr>
+<tr class="odd">
+<td align="center">2020</td>
+<td align="center">Retinal layers and visual conductivity changes in a
+case series of microangiopathic ischemic stroke patients</td>
+<td align="center">JI Lee, L Gemerzki, M Weise, L Boerker, J Graf, L
+Jansen, R Guthoff, …</td>
+<td align="center">BMC neurology</td>
+<td align="center">3</td>
+</tr>
+<tr class="even">
+<td align="center">2020</td>
+<td align="center">Serum neurofilament light chain: No clear relation to
+cognition and neuropsychiatric symptoms in stable MS</td>
+<td align="center">O Aktas, A Renner, A Huss, M Filser, S Baetge, N
+Stute, M Gasis, K Lepka, …</td>
+<td align="center">Neurology-Neuroimmunology Neuroinflammation</td>
+<td align="center">12</td>
+</tr>
+<tr class="odd">
+<td align="center">2020</td>
+<td align="center">Author response: Longitudinal optic
+neuritis-unrelated visual evoked potential changes in NMO spectrum
+disorders</td>
+<td align="center">M Ringelstein, J Harmel, H Zimmermann, AU Brandt, F
+Paul, A Haarmann, …</td>
+<td align="center">Neurology</td>
+<td align="center">0</td>
+</tr>
+<tr class="even">
+<td align="center">2020</td>
+<td align="center">Ocrelizumab zur Behandlung der Multiplen
+Sklerose</td>
+<td align="center">J Graf, P Albrecht, N Goebels, O Aktas, HP
+Hartung</td>
+<td align="center">Der Nervenarzt</td>
+<td align="center">7</td>
+</tr>
+<tr class="odd">
+<td align="center">2020</td>
+<td align="center">Confirmed Progression independent of Relapse Activity
+in Multiple Sclerosis Patients under long-term Natalizumab
+Treatment.(1372)</td>
+<td align="center">J Graf, V Leussink, G Soncin, K Lepka, I Meinl, T
+Kümpfel, HP Hartung, …</td>
+<td align="center">Neurology</td>
+<td align="center">0</td>
+</tr>
+<tr class="even">
+<td align="center">2020</td>
+<td align="center">Long-term follow-up of multiple sclerosis studies and
+outcomes from early treatment of clinically isolated syndrome in the
+BENEFIT 11 study</td>
+<td align="center">HP Hartung, J Graf, D Kremer</td>
+<td align="center">Journal of Neurology</td>
+<td align="center">15</td>
+</tr>
+<tr class="odd">
+<td align="center">2020</td>
+<td align="center">Longitudinal optic neuritis-unrelated visual evoked
+potential changes in NMO spectrum disorders</td>
+<td align="center">M Ringelstein, J Harmel, H Zimmermann, AU Brandt, F
+Paul, A Haarmann, …</td>
+<td align="center">Neurology</td>
+<td align="center">31</td>
+</tr>
+<tr class="even">
+<td align="center">2019</td>
+<td align="center">Meningitis gone viral: description of the echovirus
+wave 2013 in Germany</td>
+<td align="center">J Graf, CJ Hartmann, HC Lehmann, C Otto, O Adams, M
+Karenfort, …</td>
+<td align="center">BMC Infectious Diseases</td>
+<td align="center">10</td>
+</tr>
+<tr class="odd">
+<td align="center">2019</td>
+<td align="center">Factors associated with headache in intravenous
+immunoglobulin treatment for neurological diseases</td>
+<td align="center">J Graf, J Ingwersen, K Lepka, P Albrecht, HP Hartung,
+M Ringelstein, …</td>
+<td align="center">Acta Neurologica Scandinavica</td>
+<td align="center">3</td>
+</tr>
+<tr class="even">
+<td align="center">2019</td>
+<td align="center">Optical coherence tomography (OCT) in multiple
+sclerosis: Is cognitive performance associated with retinal layer
+thickness?</td>
+<td align="center">SJ Baetge, M Dietrich, M Filser, M Gasis, J Graf, N
+Goebels, A Renner, …</td>
+<td align="center">Multiple Sclerosis Journal</td>
+<td align="center">0</td>
+</tr>
+<tr class="odd">
+<td align="center">2019</td>
+<td align="center">Dimethyl fumarate alters intracellular Ca2+ handling
+in immune cells by redox-mediated pleiotropic effects</td>
+<td align="center">AK Herrmann, V Wüllner, S Moos, J Graf, J Chen, B
+Kieseier, …</td>
+<td align="center">Free Radical Biology and Medicine</td>
+<td align="center">14</td>
+</tr>
+<tr class="even">
+<td align="center">2019</td>
+<td align="center">Correlation of neurofilament light (NfL) chain levels
+with cognitive assessment in multiple sclerosis (MS)</td>
+<td align="center">O Aktas, M Filser, A Huss, A Renner, S Baetge, N
+Stute, M Gasis, K Lepka, …</td>
+<td align="center">Multiple Sclerosis Journal</td>
+<td align="center">0</td>
+</tr>
+<tr class="odd">
+<td align="center">2019</td>
+<td align="center">Drug treatment of clinically isolated syndrome</td>
+<td align="center">M Förster, J Graf, J Mares, O Aktas, HP Hartung, D
+Kremer</td>
+<td align="center">CNS drugs</td>
+<td align="center">12</td>
+</tr>
+<tr class="even">
+<td align="center">2019</td>
+<td align="center">Association between cognitive impairment and retinal
+layer thickness in patients with Multiple Sclerosis</td>
+<td align="center">SJ Baetge, M Dietrich, M Filser, M Gasis, J Graf, N
+Goebels, A Renner, …</td>
+<td align="center">Multiple Sclerosis Journal</td>
+<td align="center">0</td>
+</tr>
+<tr class="odd">
+<td align="center">2019</td>
+<td align="center">Regulation of sirtuin expression in autoimmune
+neuroinflammation: Induction of SIRT1 in oligodendrocyte progenitor
+cells</td>
+<td align="center">T Prozorovski, J Ingwersen, D Lukas, P Göttle, B
+Koop, J Graf, …</td>
+<td align="center">Neuroscience Letters</td>
+<td align="center">19</td>
+</tr>
+<tr class="even">
+<td align="center">2019</td>
+<td align="center">Diagnosis of multiple sclerosis: revisions of the
+McDonald criteria 2017–continuity and change</td>
+<td align="center">HP Hartung, J Graf, O Aktas, J Mares, MH Barnett</td>
+<td align="center">Current opinion in neurology</td>
+<td align="center">33</td>
+</tr>
+<tr class="odd">
+<td align="center">2019</td>
+<td align="center">Misdiagnoses and delay of diagnoses in Moyamoya
+angiopathy—a large Caucasian case series</td>
+<td align="center">J Graf, JC Schwitalla, P Albrecht, R Veltkamp, P
+Berlit, HP Hartung, …</td>
+<td align="center">Journal of Neurology</td>
+<td align="center">22</td>
+</tr>
+<tr class="even">
+<td align="center">2019</td>
+<td align="center">Infectious Risk Stratification in Multiple Sclerosis
+Patients Receiving Immunotherapy–An Update (P4. 2-014)</td>
+<td align="center">J Graf, V Leussink, T Dehmel, M Ringelstein, N
+Goebels, O Admas, …</td>
+<td align="center">Neurology</td>
+<td align="center">0</td>
+</tr>
+<tr class="odd">
+<td align="center">2019</td>
+<td align="center">Monoclonal antibodies for multiple sclerosis: an
+update</td>
+<td align="center">J Graf, O Aktas, K Rejdak, HP Hartung</td>
+<td align="center">BioDrugs</td>
+<td align="center">24</td>
+</tr>
+<tr class="even">
+<td align="center">2018</td>
+<td align="center">Acute sarcoidosis in a multiple sclerosis patient
+after alemtuzumab treatment</td>
+<td align="center">J Graf, M Ringelstein, K Lepka, J Schaller, H Quack,
+HP Hartung, O Aktas, …</td>
+<td align="center">Multiple Sclerosis Journal</td>
+<td align="center">18</td>
+</tr>
+<tr class="odd">
+<td align="center">2018</td>
+<td align="center">Moyamoya angiopathy: early postoperative course
+within 3 months after STA–MCA–bypass surgery in Europe—a retrospective
+analysis of 64 procedures</td>
+<td align="center">M Kraemer, J Sassen, R Karakaya, JC Schwitalla, J
+Graf, P Albrecht, …</td>
+<td align="center">Journal of Neurology</td>
+<td align="center">9</td>
+</tr>
+<tr class="even">
+<td align="center">2018</td>
+<td align="center">Physical exercise and cognitive training improve
+self-perceived cognitive deficits and information processing speed in
+multiple sclerosis</td>
+<td align="center">M Filser, J Graf, SJ Baetge, M Gasis, N Goebels, A
+Renner, N Stute, …</td>
+<td align="center">Multiple Sclerosis Journal</td>
+<td align="center">0</td>
+</tr>
+<tr class="odd">
+<td align="center">2018</td>
+<td align="center">Subclinical disease progression in NMO spectrum
+disorders suggested by full-field visual evoked potentials</td>
+<td align="center">M Ringelstein, J Harmel, H Zimmermann, AU Brandt, F
+Paul, A Haarmann, …</td>
+<td align="center">Multiple Sclerosis Journal</td>
+<td align="center">0</td>
+</tr>
+<tr class="even">
+<td align="center">2018</td>
+<td align="center">Efficacy of STA–MCA bypass surgery in moyamoya
+angiopathy: long-term follow-up of the Caucasian Krupp Hospital cohort
+with 81 procedures</td>
+<td align="center">M Kraemer, R Karakaya, T Matsushige, J Graf, P
+Albrecht, HP Hartung, …</td>
+<td align="center">Journal of Neurology</td>
+<td align="center">24</td>
+</tr>
+<tr class="odd">
+<td align="center">2018</td>
+<td align="center">Multifocal visual evoked potentials in chronic
+inflammatory demyelinating polyneuropathy</td>
+<td align="center">J Graf, L Jansen, J Ingwersen, M Ringelstein, J
+Harmel, J Rybak, R Kolbe, …</td>
+<td align="center">Annals of clinical and translational neurology</td>
+<td align="center">8</td>
+</tr>
+<tr class="even">
+<td align="center">2018</td>
+<td align="center">Nimodipine confers clinical improvement in two models
+of experimental autoimmune encephalomyelitis</td>
+<td align="center">J Ingwersen, L De Santi, B Wingerath, J Graf, B Koop,
+R Schneider, …</td>
+<td align="center">Journal of Neurochemistry</td>
+<td align="center">23</td>
+</tr>
+<tr class="odd">
+<td align="center">2017</td>
+<td align="center">Infectious risk stratification in multiple sclerosis
+patients receiving immunotherapy</td>
+<td align="center">J Graf, VI Leussink, T Dehmel, M Ringelstein, N
+Goebels, O Adams, …</td>
+<td align="center">Annals of clinical and translational neurology</td>
+<td align="center">14</td>
+</tr>
+<tr class="even">
+<td align="center">2017</td>
+<td align="center">Fulminant intramedullary spinal cord sarcoidosis</td>
+<td align="center">J Graf, M Ringelstein, O Aktas, MP Wattjes, HP
+Hartung</td>
+<td align="center">Multiple Sclerosis and Related Disorders</td>
+<td align="center">3</td>
+</tr>
+<tr class="odd">
+<td align="center">2017</td>
+<td align="center">Reconstitution of the peripheral immune repertoire
+following withdrawal of fingolimod</td>
+<td align="center">C Warnke, J Graf, HP Hartung</td>
+<td align="center">Multiple Sclerosis Journal</td>
+<td align="center">2</td>
+</tr>
+<tr class="even">
+<td align="center">2016</td>
+<td align="center">Dual roles of the adenosine A2a receptor in
+autoimmune neuroinflammation</td>
+<td align="center">J Ingwersen, B Wingerath, J Graf, K Lepka, M
+Hofrichter, F Schröter, …</td>
+<td align="center">Journal of neuroinflammation</td>
+<td align="center">70</td>
+</tr>
+<tr class="odd">
+<td align="center">2015</td>
+<td align="center">Natalizumab restores aberrant mi RNA expression
+profile in multiple sclerosis and reveals a critical role for
+miR‐20b</td>
+<td align="center">J Ingwersen, T Menge, B Wingerath, D Kaya, J Graf, T
+Prozorovski, …</td>
+<td align="center">Annals of clinical and translational neurology</td>
+<td align="center">77</td>
+</tr>
+<tr class="even">
+<td align="center">2012</td>
+<td align="center">Dual roles of adenosine 2a receptor in experimental
+autoimmune encephalomyelitis</td>
+<td align="center">J Ingwersen, B Wingerath, K Lepka, M Hofrichter, J
+Graf, F Schröter, …</td>
+<td align="center">Multiple Sclerosis Journal</td>
+<td align="center">1</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<p><br><br><br><br></p>
+<hr />
+</div>
+<div id="congress-contributions" class="section level3">
+<h3>Congress Contributions</h3>
+<table>
+<caption>Overview</caption>
+<thead>
+<tr class="header">
+<th align="center">Year</th>
+<th align="center">Congress</th>
+<th align="center">Place</th>
+<th align="center">Presentation</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center">2022</td>
+<td align="center">ACTRIMS</td>
+<td align="center">Palm Beach</td>
+<td align="center">ePoster</td>
+</tr>
+<tr class="even">
+<td align="center">2021</td>
+<td align="center">ECTRIMS</td>
+<td align="center">Vienna</td>
+<td align="center">ePoster</td>
+</tr>
+<tr class="odd">
+<td align="center">2021</td>
+<td align="center">Charcot</td>
+<td align="center">Baveno</td>
+<td align="center">ePoster/Talk</td>
+</tr>
+<tr class="even">
+<td align="center">2020</td>
+<td align="center">AAN</td>
+<td align="center">Toronto</td>
+<td align="center">ePoster</td>
+</tr>
+<tr class="odd">
+<td align="center">2019</td>
+<td align="center">DGN</td>
+<td align="center">Stuttgart</td>
+<td align="center">ePoster</td>
+</tr>
+<tr class="even">
+<td align="center">2019</td>
+<td align="center">AAN</td>
+<td align="center">Philadelphia</td>
+<td align="center">Posters</td>
+</tr>
+<tr class="odd">
+<td align="center">2018</td>
+<td align="center">DGN</td>
+<td align="center">Berlin</td>
+<td align="center">Talk</td>
+</tr>
+<tr class="even">
+<td align="center">2017</td>
+<td align="center">DGN</td>
+<td align="center">Leipzig</td>
+<td align="center">Talk</td>
+</tr>
+</tbody>
+</table>
+<p><sup>Key:</sup> <sup>DGN,</sup> <sup>Deutsche</sup>
+<sup>Gesellschaft</sup> <sup>für</sup> <sup>Neurologie;</sup>
+<sup>AAN,</sup> <sup>American</sup> <sup>Academy</sup> <sup>of</sup>
+<sup>Neurology;</sup> <sup>E/ACTRIMS,</sup> <sup>European/Americas</sup>
+<sup>Committee</sup> <sup>for</sup> <sup>Treatment</sup> <sup>and</sup>
+<sup>Research</sup> <sup>in</sup> <sup>MS.</sup></p>
+<p><a href="https://www.abstractsonline.com/pp8/#!/10495/presentation/513">Link</a>
+to my 2022 ACTRIMS Forum abstract. <br>
+<a href="https://www.charcot-ms.org/files/16_ECF2021_Poster_EP_Graf_J.pdf">Link</a>
+to my 2021 Charcot Annual Meeting poster presentation.</p>
+<hr />
+<p><br><br><br><br></p>
+<hr />
+</div>
+<div id="acknowledgment" class="section level3">
+<h3>Acknowledgment</h3>
+<div id="htmlwidget-b894fbc7d1fef3fccae1" style="width:576px;height:384px;" class="plotly html-widget"></div>
+<script type="application/json" data-for="htmlwidget-b894fbc7d1fef3fccae1">{"x":{"data":[{"x":[4,5,10,11,13,17,18,25,26,31,32,33,36,40,42,44,45,46,52,54,56,61,64,65,73,76],"y":[0.00520156046814044,0.0525210084033613,0.0107334525939177,0.0792227204783259,0.0203125,0.0718789407313997,0.0658263305322129,0.0474631751227496,0.015647226173542,0.0697674418604651,0.0635245901639344,0.0215439856373429,0.0147420147420147,0.0705882352941176,0.0597176981541802,0.0128805620608899,0.0561056105610561,0.0882917466410749,0.0235478806907378,0.0425806451612903,0.0254237288135593,0.0280811232449298,0.0490322580645161,0.0628205128205128,0.0642750373692078,0.0827814569536424],"text":["Helen Tremlett","Huah Shin Ng","Jens Ingwersen","Feng Zhu","José Wijnands","Jens Ingwersen","Yinshan Zhao","Helen Tremlett","Helen Tremlett","Jens Ingwersen","Joachim Havla","Philipp Albrecht","Yinshan Zhao","Yinshan Zhao","José Wijnands","Hans-Peter Hartung","Sven Meuth","Ruth Ann Marrie","Feng Zhu","Philipp Albrecht","Jens Ingwersen","Sven Meuth","Charity Evans","Charity Evans","Huah Shin Ng","Sven Meuth"],"type":"scatter","mode":"markers","marker":{"autocolorscale":false,"color":"rgba(204,204,204,1)","opacity":0.2,"size":[4.48741994256122,11.0742158391428,5.26353270644811,14.7840581882497,6.59757721850324,13.763775140864,12.9228599643046,10.3714366076343,5.94837145948526,13.4704174264672,12.6030644278491,6.76886649379835,5.8223229662687,13.5844532743752,12.0741414794886,5.56298796529829,11.5722747842003,16.0440100630414,7.04754362822793,9.69298090915162,7.30837073352361,7.67781349472834,10.5894619947938,12.5052418415786,12.7073291940844,15.2784728986956],"symbol":"circle","line":{"width":1.88976377952756,"color":"rgba(204,204,204,1)"}},"hoveron":"points","name":"G_1","legendgroup":"G_1","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"x":[4,8,9,14,17,22,23,25,29,30,32,41,42,44,51,59,61,62,64,69,70,73,76,80],"y":[0.023407022106632,0.0034965034965035,0.0601719197707736,0.0454545454545455,0.0453972257250946,0.0708333333333333,0.0628778718258767,0.00327332242225859,0.00559440559440559,0.0490883590462833,0.10655737704918,0.0354838709677419,0.0586319218241042,0.0597189695550351,0.0129032258064516,0.0542857142857143,0.0078003120124805,0.0704,0.00129032258064516,0.0527859237536657,0.0174050632911392,0.0762331838565022,0.0380794701986755,0.0445682451253482],"text":["Feng Zhu","Markus Krämer","Feng Zhu","Hans-Peter Hartung","Jens Ingwersen","Orhan Aktas","Jens Ingwersen","Yinshan Zhao","Hans-Peter Hartung","Joachim Havla","Helen Tremlett","Jens Ingwersen","Huah Shin Ng","Feng Zhu","Ruth Ann Marrie","Marius Ringelstein","Sven Meuth","José Wijnands","Sven Meuth","Orhan Aktas","Orhan Aktas","Orhan Aktas","Huah Shin Ng","Huah Shin Ng"],"type":"scatter","mode":"markers","marker":{"autocolorscale":false,"color":"rgba(138,138,138,1)","opacity":0.2,"size":[7.02795642263888,4.24310549550247,12.1372507452732,10.0923306899543,10.0843658271974,13.618505588927,12.5132111565748,4.21051104636136,4.54304471654191,10.5972572126895,18.5815874155218,8.70675339685698,11.9232837980123,12.0743181273271,5.5661467458366,11.3194126451371,4.8533872819596,13.5583010792557,3.88489758526782,11.1110246644538,6.19305718691089,14.3687193615371,9.06747511196897,9.9691742264419],"symbol":"circle","line":{"width":1.88976377952756,"color":"rgba(138,138,138,1)"}},"hoveron":"points","name":"G_10","legendgroup":"G_10","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"x":[1,3,10,16,17,18,23,27,30,37,38,44,46,49,53,59,60,61,63,66,70,72,74,77,79,80],"y":[0.0690208667736758,0.0474254742547425,0.00536672629695885,0.0283783783783784,0.00882723833543506,0.0532212885154062,0.0616686819830713,0.00271370420624152,0.02945301542777,0.00138504155124654,0.0727513227513227,0.040983606557377,0.0115163147792706,0.0761494252873563,0.00266311584553928,0.0614285714285714,0.0710382513661202,0.0592823712948518,0.0631424375917768,0.032,0.0759493670886076,0.00817438692098093,0.00161030595813205,0.0222222222222222,0.0669371196754564,0.0348189415041783],"text":["José Wijnands","José Wijnands","Charity Evans","José Wijnands","John Fisk","Hans-Peter Hartung","Orhan Aktas","Charity Evans","Yinshan Zhao","Joachim Havla","Hans-Peter Hartung","Yinshan Zhao","Charity Evans","Marius Ringelstein","Ruth Ann Marrie","Sven Meuth","Markus Krämer","John Fisk","Markus Krämer","Ruth Ann Marrie","Yinshan Zhao","Marius Ringelstein","Philipp Albrecht","Hans-Peter Hartung","Feng Zhu","Charity Evans"],"type":"scatter","mode":"markers","marker":{"autocolorscale":false,"color":"rgba(53,53,53,1)","opacity":0.2,"size":[13.3666927455898,10.3661979989226,4.51082584562955,7.71913593376196,4.99718855049931,11.1715165309718,12.3452089480662,4.12750573242382,7.86852009242076,3.90599170317201,13.8849775996482,9.47105372050797,5.37276911724244,14.3570826710017,4.11987970867411,12.311848398903,13.6469755371754,12.013657301752,12.5499692284641,8.22254757252369,14.3292883069356,4.90580291812885,3.94986431804584,6.86319337111236,13.0771879913935,8.61434176511469],"symbol":"circle","line":{"width":1.88976377952756,"color":"rgba(53,53,53,1)"}},"hoveron":"points","name":"G_11","legendgroup":"G_11","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"x":[3,12,16,20,21,27,29,31,33,34,39,41,42,43,44,50,54,58,59,60,62,66,68,69,73,75,76,77,78,79],"y":[0.0677506775067751,0.0422322775263952,0.00810810810810811,0.0512820512820513,0.0454545454545455,0.0366350067842605,0.0433566433566434,0.0843023255813953,0.0269299820466786,0.0655021834061135,0.033500837520938,0.0209677419354839,0.0521172638436482,0.0223463687150838,0.0433255269320843,0.0715151515151515,0.0116129032258065,0.00815660685154975,0.0828571428571429,0.0724043715846995,0.0752,0.016,0.0787781350482315,0.0469208211143695,0.0239162929745889,0.0574112734864301,0.0397350993377483,0.0158730158730159,0.0747028862478778,0.0223123732251521],"text":["José Wijnands","John Fisk","Joachim Havla","Jens Ingwersen","Yinshan Zhao","Sven Meuth","Helen Tremlett","Orhan Aktas","Helen Tremlett","Philipp Albrecht","Jens Ingwersen","Sven Meuth","Hans-Peter Hartung","Marius Ringelstein","Markus Krämer","José Wijnands","Helen Tremlett","Charity Evans","Markus Krämer","José Wijnands","Hans-Peter Hartung","Ruth Ann Marrie","Charity Evans","Philipp Albrecht","Orhan Aktas","Huah Shin Ng","Hans-Peter Hartung","Yinshan Zhao","John Fisk","Sven Meuth"],"type":"scatter","mode":"markers","marker":{"autocolorscale":false,"color":"rgba(197,197,197,1)","opacity":0.2,"size":[13.1902196452868,9.64457159983763,4.89651894866538,10.9020671920008,10.0923306899543,8.86673429364456,9.80081308869692,15.489765885126,7.51778358037041,12.8778243044814,8.43114741307615,6.68871897646088,11.0181171629605,6.88045854333403,9.79648919353024,13.7132328028727,5.38624201670004,4.90331250811452,15.2889878912913,13.8367747461813,14.2251775702306,5.99748519494338,14.7222917421229,10.2960752702719,7.09877241925341,11.7536859494882,9.29755516186763,5.97980681163643,14.1561126724822,6.87573077884016],"symbol":"circle","line":{"width":1.88976377952756,"color":"rgba(197,197,197,1)"}},"hoveron":"points","name":"G_12","legendgroup":"G_12","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"x":[1,12,14,15,17,19,20,22,23,31,32,34,41,44,47,48,49,54,56,62,65,67,69,73,76],"y":[0.0481540930979133,0.081447963800905,0.0545454545454545,0.00299850074962519,0.0151324085750315,0.0644257703081232,0.0326340326340326,0.0333333333333333,0.0108827085852479,0.0770348837209302,0.0163934426229508,0.0291120815138282,0.0887096774193548,0.0585480093676815,0.0557142857142857,0.0604133545310016,0.0445402298850575,0.00645161290322581,0.0268361581920904,0.0048,0.0769230769230769,0.0518918918918919,0.0718475073313783,0.00448430493273543,0.00827814569536424],"text":["John Fisk","Joachim Havla","Sven Meuth","Huah Shin Ng","Philipp Albrecht","Helen Tremlett","Ruth Ann Marrie","Ruth Ann Marrie","Marius Ringelstein","Sven Meuth","Feng Zhu","Orhan Aktas","Sven Meuth","Markus Krämer","Markus Krämer","Markus Krämer","Markus Krämer","Marius Ringelstein","Charity Evans","Helen Tremlett","Feng Zhu","José Wijnands","Huah Shin Ng","Feng Zhu","Marius Ringelstein"],"type":"scatter","mode":"markers","marker":{"autocolorscale":false,"color":"rgba(65,65,65,1)","opacity":0.2,"size":[10.4674406482239,15.093211320897,11.3555019622711,4.17001903018688,5.87668874811856,12.728271513796,8.31067229730959,8.40786665460439,5.2843644836602,14.4801004805595,6.0522554564867,7.82112800949673,16.1020723369152,11.9116249713871,11.5179031229349,12.1707954804583,9.96528132821929,4.66396602170722,7.50473989294938,4.43037716461997,14.4645670416148,10.9868025647626,13.7594080055062,4.38536724637741,4.92033437902014],"symbol":"circle","line":{"width":1.88976377952756,"color":"rgba(65,65,65,1)"}},"hoveron":"points","name":"G_13","legendgroup":"G_13","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"x":[1,5,7,8,12,13,18,19,21,25,26,29,32,34,37,41,42,47,51,53,56,57,59,66,67],"y":[0.0513643659711075,0.0210084033613445,0.0226950354609929,0.101398601398601,0.0754147812971342,0.06875,0.07703081232493,0.0742296918767507,0.046875,0.0638297872340425,0.0497866287339972,0.0769230769230769,0.0245901639344262,0.0524017467248908,0.0221606648199446,0.0612903225806452,0.00542888165038002,0.0157142857142857,0.0596774193548387,0.0426098535286285,0.0790960451977401,0.0806451612903226,0.0557142857142857,0.0333333333333333,0.0237837837837838],"text":["Marius Ringelstein","Sven Meuth","Orhan Aktas","Feng Zhu","José Wijnands","Jens Ingwersen","John Fisk","Feng Zhu","Charity Evans","Feng Zhu","John Fisk","Huah Shin Ng","John Fisk","Huah Shin Ng","Jens Ingwersen","Sven Meuth","Orhan Aktas","Markus Krämer","Hans-Peter Hartung","Markus Krämer","Markus Krämer","Sven Meuth","John Fisk","Hans-Peter Hartung","Charity Evans"],"type":"scatter","mode":"markers","marker":{"autocolorscale":false,"color":"rgba(234,234,234,1)","opacity":0.2,"size":[10.9135045748513,6.69437459190388,6.92894685251547,17.864902912052,14.2550174905285,13.3290600717849,14.4795348371973,14.0903708535214,10.2897083014472,12.6454675850235,10.6942812845997,14.4645670416148,7.1924722711541,11.0576449284309,6.85463244506574,12.292640323717,4.51962649381392,5.95770796685088,12.0685451614034,9.69703970494441,14.7664591428952,14.9816781061469,11.5179031229349,8.40786665460439,7.08034681108962],"symbol":"circle","line":{"width":1.88976377952756,"color":"rgba(234,234,234,1)"}},"hoveron":"points","name":"G_14","legendgroup":"G_14","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"x":[3,9,13,16,17,18,19,23,25,28,29,33,42,44,46,47,49,50,54,58,60,64,66,67,70,71,74,75,78,79,80],"y":[0.018970189701897,0.0859598853868195,0.0046875,0.027027027027027,0.0756620428751576,0.0448179271708683,0.0504201680672269,0.0471584038694075,0.0392798690671031,0.0351681957186544,0.0797202797202797,0.0825852782764812,0.0238870792616721,0.063231850117096,0.00767754318618042,0.0614285714285714,0.00718390804597701,0.0412121212121212,0.0296774193548387,0.00978792822185971,0.046448087431694,0.0748387096774194,0.012,0.00432432432432432,0.0949367088607595,0.00741839762611276,0.0660225442834139,0.0302713987473904,0.098471986417657,0.0243407707910751,0.0473537604456825],"text":["John Fisk","José Wijnands","José Wijnands","Joachim Havla","Helen Tremlett","Charity Evans","Jens Ingwersen","Joachim Havla","Huah Shin Ng","José Wijnands","Joachim Havla","Charity Evans","José Wijnands","Feng Zhu","José Wijnands","Yinshan Zhao","Yinshan Zhao","Joachim Havla","Markus Krämer","José Wijnands","Yinshan Zhao","Marius Ringelstein","Sven Meuth","Sven Meuth","Yinshan Zhao","Philipp Albrecht","Charity Evans","Sven Meuth","Sven Meuth","Feng Zhu","Sven Meuth"],"type":"scatter","mode":"markers","marker":{"autocolorscale":false,"color":"rgba(240,240,240,1)","opacity":0.2,"size":[6.41084154367786,15.7200485959156,4.41435611404019,7.53127500689429,14.2893699297316,10.0038690970678,10.7823106016485,10.3290879929552,9.23429325882748,8.66288116888766,14.8531842376479,15.2512179174927,7.09471022409354,12.5623919600934,4.83617514465766,12.311848398903,4.76691260514799,9.50280883327553,7.89971335364006,5.13149555683133,10.2303874859964,14.1749828719602,5.44022831615381,4.36249100440291,16.9671769505386,4.79982570207315,12.9501210634723,7.98227804850694,17.4583203368109,7.15779542086368,10.3562332205251],"symbol":"circle","line":{"width":1.88976377952756,"color":"rgba(240,240,240,1)"}},"hoveron":"points","name":"G_15","legendgroup":"G_15","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"x":[1,4,5,10,11,17,18,19,21,23,27,28,31,32,33,34,36,38,39,44,48,51,52,56,57,58,59,62,64,67,68,70,71,72,76,78],"y":[0.0802568218298555,0.0455136540962289,0.0630252100840336,0.0661896243291592,0.070254110612855,0.042875157629256,0.0322128851540616,0.0826330532212885,0.0838068181818182,0.0435308343409915,0.0312075983717775,0.00917431192660551,0.0319767441860465,0.0717213114754098,0.0736086175942549,0.0873362445414847,0.0626535626535627,0.00793650793650794,0.0720268006700168,0.0140515222482436,0.0731319554848967,0.067741935483871,0.00941915227629513,0.00706214689265537,0.00672043010752688,0.0163132137030995,0.0142857142857143,0.0432,0.0270967741935484,0.0432432432432432,0.0401929260450161,0.0712025316455696,0.0534124629080119,0.0476839237057221,0.0463576158940397,0.0611205432937182],"text":["Orhan Aktas","Marius Ringelstein","Feng Zhu","Charity Evans","Charity Evans","Philipp Albrecht","Huah Shin Ng","Feng Zhu","Ruth Ann Marrie","Philipp Albrecht","Huah Shin Ng","Jens Ingwersen","Marius Ringelstein","Huah Shin Ng","Feng Zhu","Charity Evans","Charity Evans","Joachim Havla","Marius Ringelstein","Jens Ingwersen","Yinshan Zhao","Helen Tremlett","Charity Evans","Markus Krämer","Markus Krämer","Sven Meuth","Ruth Ann Marrie","Sven Meuth","José Wijnands","Hans-Peter Hartung","John Fisk","José Wijnands","Ruth Ann Marrie","Yinshan Zhao","Philipp Albrecht","Helen Tremlett"],"type":"scatter","mode":"markers","marker":{"autocolorscale":false,"color":"rgba(252,252,252,1)","opacity":0.2,"size":[14.9277261052542,10.1005441254526,12.5336819519917,12.9733344342655,13.5380321401808,9.73390629637716,8.25213685972651,15.2578552617134,15.4209255288131,9.82501839297328,8.11240837998319,5.04573109292518,8.21931519284075,13.7418752374306,14.0040836633524,15.9112639525107,12.4820461965736,4.87247612230474,13.7843177546405,5.72614764277525,13.9378598688634,13.1890050741051,5.07996038425713,4.74981313349577,4.70178792537102,6.04108741646147,5.75876986148403,9.77904612692649,7.54097138095653,9.78505515763849,9.36117737860886,13.6697995335035,11.1980792446743,10.4021100110131,10.2178161522325,12.2690514422462],"symbol":"circle","line":{"width":1.88976377952756,"color":"rgba(252,252,252,1)"}},"hoveron":"points","name":"G_16","legendgroup":"G_16","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"x":[6,8,12,13,15,16,18,21,22,30,35,36,37,39,45,48,50,53,54,55,56,60,62,64,70,71,73,74],"y":[0.0715421303656598,0.0297202797202797,0.0723981900452489,0.0484375,0.0794602698650675,0.0540540540540541,0.00140056022408964,0.0497159090909091,0.0486111111111111,0.00280504908835905,0.0854700854700855,0.0110565110565111,0.0484764542936288,0.0385259631490787,0.0429042904290429,0.0620031796502385,0.0606060606060606,0.033288948069241,0.0232258064516129,0.0228758169934641,0.0720338983050847,0.0669398907103825,0.096,0.0619354838709677,0.0443037974683544,0.0267062314540059,0.0568011958146487,0.0756843800322061],"text":["Markus Krämer","Ruth Ann Marrie","Hans-Peter Hartung","Marius Ringelstein","Yinshan Zhao","Ruth Ann Marrie","Philipp Albrecht","Philipp Albrecht","Charity Evans","Jens Ingwersen","Markus Krämer","Philipp Albrecht","Helen Tremlett","Huah Shin Ng","Marius Ringelstein","Philipp Albrecht","Helen Tremlett","Orhan Aktas","Helen Tremlett","Markus Krämer","Jens Ingwersen","Philipp Albrecht","Huah Shin Ng","Yinshan Zhao","Marius Ringelstein","Orhan Aktas","Ruth Ann Marrie","Jens Ingwersen"],"type":"scatter","mode":"markers","marker":{"autocolorscale":false,"color":"rgba(168,168,168,1)","opacity":0.2,"size":[13.7169810581827,7.905671124031,13.8359159279401,10.5068202536037,14.8170610025755,11.2872248219429,3.90924811531443,10.6844548686155,10.5309435970181,4.14121426083277,15.6520013759442,5.30861889634279,10.5122329740276,9.12952420231992,9.73795457465548,12.3916834190317,12.1975698658385,8.40169769942892,7.0027569854725,6.95408711191926,13.7853038496185,13.0775729856797,17.1148963830489,12.3822779017279,9.93242746604223,7.48667695483419,11.6689208314073,14.2924732649711],"symbol":"circle","line":{"width":1.88976377952756,"color":"rgba(168,168,168,1)"}},"hoveron":"points","name":"G_17","legendgroup":"G_17","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"x":[1,6,23,25,26,27,29,38,42,45,50,53,57,66,67,71],"y":[0.0609951845906902,0.0922098569157393,0.0544135429262394,0.0736497545008183,0.0753911806543385,0.0122116689280868,0.00699300699300699,0.0119047619047619,0.0152008686210641,0.0676567656765677,0.0496969696969697,0.0758988015978695,0.0524193548387097,0.0613333333333333,0.0324324324324324,0.0370919881305638],"text":["Markus Krämer","Yinshan Zhao","Feng Zhu","Orhan Aktas","Joachim Havla","Philipp Albrecht","Philipp Albrecht","José Wijnands","Feng Zhu","Ruth Ann Marrie","John Fisk","John Fisk","Markus Krämer","Yinshan Zhao","Marius Ringelstein","Joachim Havla"],"type":"scatter","mode":"markers","marker":{"autocolorscale":false,"color":"rgba(255,255,255,1)","opacity":0.2,"size":[12.2516342783383,16.5883437252514,11.3371736591969,14.0097989070311,14.25173861505,5.46974293813971,4.74010059341807,5.42694725563279,5.88622170667426,13.1771720222259,10.6818232597846,14.3222631707263,11.0600915030364,12.2986161706735,8.28265191220437,8.93024283460355],"symbol":"circle","line":{"width":1.88976377952756,"color":"rgba(255,255,255,1)"}},"hoveron":"points","name":"G_18","legendgroup":"G_18","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"x":[1,2,3,4,8,10,12,15,22,23,29,30,31,34,35,37,44,52,53,54,58,62,63,72,73,74,75,78],"y":[0.043338683788122,0.00953678474114441,0.0501355013550136,0.0143042912873862,0.034965034965035,0.0483005366726297,0.0452488687782805,0.0239880059970015,0.0111111111111111,0.0580411124546554,0.0461538461538462,0.0603085553997195,0.0130813953488372,0.024745269286754,0.0384615384615385,0.018005540166205,0.00702576112412178,0.0832025117739403,0.00932090545938748,0.0258064516129032,0.0179445350734095,0.056,0.0719530102790015,0.055858310626703,0.0612855007473842,0.0692431561996779,0.011482254697286,0.0628183361629881],"text":["John Fisk","Orhan Aktas","Jens Ingwersen","Yinshan Zhao","José Wijnands","Ruth Ann Marrie","Huah Shin Ng","Helen Tremlett","Markus Krämer","Huah Shin Ng","Joachim Havla","Sven Meuth","Huah Shin Ng","Hans-Peter Hartung","Orhan Aktas","Sven Meuth","Jens Ingwersen","José Wijnands","Orhan Aktas","Yinshan Zhao","Feng Zhu","Hans-Peter Hartung","Feng Zhu","Jens Ingwersen","Helen Tremlett","Philipp Albrecht","Philipp Albrecht","Markus Krämer"],"type":"scatter","mode":"markers","marker":{"autocolorscale":false,"color":"rgba(133,133,133,1)","opacity":0.2,"size":[9.79831745220319,5.09640170641112,10.7427566590802,5.76135745496751,8.63464590902849,10.4877891082002,10.0637508635445,7.10874414459739,5.31623770566285,11.8411964196786,10.1895015947976,12.1562347854318,5.59097803306599,7.21403856138458,9.12057114159022,6.27661981057438,4.74470205217029,15.3369697475549,5.06622661354442,7.36158213932117,6.26813076048432,11.557600999514,13.7740658408836,11.5379143229927,12.2919703856416,13.3975763364547,5.36801793299005,12.5049394222529],"symbol":"circle","line":{"width":1.88976377952756,"color":"rgba(133,133,133,1)"}},"hoveron":"points","name":"G_19","legendgroup":"G_19","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"x":[3,4,9,10,12,13,15,16,21,23,30,32,37,38,40,42,43,48,49,52,55,56,57,58,63,65,67,71,72,75,77],"y":[0.0514905149051491,0.0260078023407022,0.0702005730659026,0.0214669051878354,0.00603318250377074,0.059375,0.0599700149925037,0.0175675675675676,0.0127840909090909,0.00725513905683192,0.0659186535764376,0.0655737704918033,0.00692520775623269,0.0661375661375661,0.0176470588235294,0.01085776330076,0.0810055865921788,0.0906200317965024,0.0373563218390805,0.0518053375196232,0.0669934640522876,0.00282485875706215,0.021505376344086,0.0962479608482871,0.0249632892804699,0.0307692307692308,0.0616216216216216,0.0771513353115727,0.00681198910081744,0.0594989561586639,0.0444444444444444],"text":["Hans-Peter Hartung","Charity Evans","Charity Evans","John Fisk","Hans-Peter Hartung","Charity Evans","Yinshan Zhao","Huah Shin Ng","Ruth Ann Marrie","Feng Zhu","Feng Zhu","Charity Evans","Orhan Aktas","Marius Ringelstein","Marius Ringelstein","Joachim Havla","John Fisk","Marius Ringelstein","Sven Meuth","Orhan Aktas","Charity Evans","Charity Evans","José Wijnands","Huah Shin Ng","Joachim Havla","Joachim Havla","José Wijnands","Philipp Albrecht","José Wijnands","Marius Ringelstein","Joachim Havla"],"type":"scatter","mode":"markers","marker":{"autocolorscale":false,"color":"rgba(189,189,189,1)","opacity":0.2,"size":[10.9310325818534,7.38957617358453,13.5305939732361,6.7581459722893,4.60500727033604,12.026527116521,12.1091982402429,6.21567233640266,5.54954179565714,4.77691298043978,12.9356869356358,12.8877703226584,4.73057425995748,12.9661016983825,6.22673458409452,5.28088303815611,15.0317519540424,16.3674735146949,8.96697807167069,10.974776140633,13.0850162077849,4.14417745097644,6.76349663818454,17.1493447148451,7.24435227625853,8.05147651560188,12.3386704650016,14.4962792211716,4.71466126842668,12.0437495520483,9.95197131363926],"symbol":"circle","line":{"width":1.88976377952756,"color":"rgba(189,189,189,1)"}},"hoveron":"points","name":"G_2","legendgroup":"G_2","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"x":[1,2,3,4,5,6,7,11,17,28,33,35,44,45,49,53,54,62,65,66,68,70,71,75,76,78,79,80],"y":[0.0674157303370786,0.053133514986376,0.024390243902439,0.0221066319895969,0.107142857142857,0.00317965023847377,0.00141843971631206,0.0672645739910314,0.0252206809583859,0.0214067278287462,0.00538599640933573,0.0626780626780627,0.0117096018735363,0.0412541254125413,0.021551724137931,0.0545938748335553,0.0129032258064516,0.0672,0.00384615384615385,0.0573333333333333,0.0594855305466238,0.0237341772151899,0.0341246290801187,0.00208768267223382,0.0033112582781457,0.0220713073005093,0.0304259634888438,0.0738161559888579],"text":["Philipp Albrecht","José Wijnands","Ruth Ann Marrie","Marius Ringelstein","Sven Meuth","José Wijnands","Markus Krämer","Orhan Aktas","Markus Krämer","Joachim Havla","Huah Shin Ng","Charity Evans","Philipp Albrecht","Markus Krämer","Yinshan Zhao","Markus Krämer","Marius Ringelstein","Yinshan Zhao","Huah Shin Ng","Markus Krämer","Marius Ringelstein","Hans-Peter Hartung","Markus Krämer","Sven Meuth","Feng Zhu","Huah Shin Ng","Markus Krämer","Joachim Havla"],"type":"scatter","mode":"markers","marker":{"autocolorscale":false,"color":"rgba(71,71,71,1)","opacity":0.2,"size":[13.1436838013635,11.1593208313425,7.16467445721573,6.84711793455541,18.662925198791,4.19675847927573,3.91294457799476,13.1226828948655,7.28013967291402,6.74977630707633,4.51355474512613,12.4854501707062,5.39972937352194,9.50864585628609,6.76994277678594,11.3622296575434,5.5661467458366,13.1137113041484,4.29377480187097,11.7428568430672,12.0418842016374,7.07344889012261,8.51784480486174,4.03068994019947,4.21606772948621,6.84220520013973,8.00376263240213,14.032917436433],"symbol":"circle","line":{"width":1.88976377952756,"color":"rgba(71,71,71,1)"}},"hoveron":"points","name":"G_20","legendgroup":"G_20","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"x":[3,4,5,6,11,12,13,14,16,18,19,20,23,27,28,30,31,33,34,35,36,39,40,41,46,49,50,56,58,60,63,64,66,67,69,70,74,75,76,78],"y":[0.043360433604336,0.0182054616384915,0.00840336134453781,0.0524642289348172,0.00896860986547085,0.00754147812971342,0.0875,0.0393939393939394,0.077027027027027,0.0280112044817927,0.0588235294117647,0.0466200466200466,0.0362756952841596,0.0583446404341927,0.081039755351682,0.0210378681626928,0.0508720930232558,0.0107719928186715,0.049490538573508,0.00284900284900285,0.00614250614250614,0.0804020100502513,0.0794117647058823,0.0145161290322581,0.0806142034548944,0.0316091954022989,0.0472727272727273,0.0522598870056497,0.0065252854812398,0.0505464480874317,0.0440528634361234,0.0348387096774194,0.0346666666666667,0.0508108108108108,0.0601173020527859,0.0522151898734177,0.0772946859903382,0.0292275574112735,0.0662251655629139,0.0203735144312394],"text":["Sven Meuth","Joachim Havla","Orhan Aktas","Helen Tremlett","Hans-Peter Hartung","José Wijnands","Marius Ringelstein","Charity Evans","Philipp Albrecht","Markus Krämer","Huah Shin Ng","Huah Shin Ng","John Fisk","Yinshan Zhao","Charity Evans","Huah Shin Ng","Marius Ringelstein","Marius Ringelstein","Feng Zhu","Philipp Albrecht","José Wijnands","Orhan Aktas","Hans-Peter Hartung","Sven Meuth","Philipp Albrecht","Feng Zhu","Feng Zhu","Jens Ingwersen","José Wijnands","Philipp Albrecht","José Wijnands","Huah Shin Ng","Marius Ringelstein","Feng Zhu","Helen Tremlett","Jens Ingwersen","Philipp Albrecht","Philipp Albrecht","Hans-Peter Hartung","Feng Zhu"],"type":"scatter","mode":"markers","marker":{"autocolorscale":false,"color":"rgba(105,105,105,1)","opacity":0.2,"size":[9.80133977613233,6.3044388362193,4.93786697576707,11.0663265716624,5.01696420334896,4.8170928120789,15.9340142050788,9.25014529734696,14.4790089417421,7.66809376433811,11.9499058047885,10.2542817772413,8.81679887429947,11.8833687971429,15.0364990141473,6.69847284702663,10.8451045890851,5.26891205651285,10.6531398438869,4.14778456402129,4.62042263747495,14.9478971097185,14.8103221662665,5.79086311247535,14.977377135704,8.16822839568716,10.3449734888893,11.0379340950993,4.67433556444203,10.7998569591839,9.89755840104494,8.61708916040475,8.59317844872803,10.8365895731728,12.1296622015309,11.0317236052224,14.5161950739376,7.83718000649904,12.9782723759517,6.60606442030552],"symbol":"circle","line":{"width":1.88976377952756,"color":"rgba(105,105,105,1)"}},"hoveron":"points","name":"G_21","legendgroup":"G_21","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"x":[4,5,13,14,15,16,17,18,19,22,24,37,38,41,42,43,44,50,51,54,55,56,58,59,61,67,72,74],"y":[0.0195058517555267,0.121848739495798,0.065625,0.0333333333333333,0.0179910044977511,0.0702702702702703,0.00252206809583859,0.0364145658263305,0.0700280112044818,0.00416666666666667,0.0286396181384248,0.0664819944598338,0.0277777777777778,0.0290322580645161,0.0651465798045603,0.0754189944134078,0.0526932084309134,0.0303030303030303,0.0758064516129032,0.0206451612903226,0.0473856209150327,0.0508474576271186,0.0424143556280587,0.0685714285714286,0.0436817472698908,0.00756756756756757,0.0136239782016349,0.0418679549114332],"text":["John Fisk","Philipp Albrecht","Huah Shin Ng","Ruth Ann Marrie","Yinshan Zhao","John Fisk","Huah Shin Ng","Sven Meuth","José Wijnands","Joachim Havla","Charity Evans","Joachim Havla","Huah Shin Ng","Hans-Peter Hartung","John Fisk","José Wijnands","John Fisk","Feng Zhu","Ruth Ann Marrie","Helen Tremlett","Marius Ringelstein","Charity Evans","Philipp Albrecht","John Fisk","Marius Ringelstein","José Wijnands","Orhan Aktas","Markus Krämer"],"type":"scatter","mode":"markers","marker":{"autocolorscale":false,"color":"rgba(128,128,128,1)","opacity":0.2,"size":[6.48536461064478,20.7059266958946,12.8948879402263,8.40786665460439,6.27459713553669,13.5402772601628,4.09847208864493,8.8360984958798,13.5066193149917,4.33989559391655,7.75545126941494,13.0139550264677,7.6356437936587,7.810031916516,12.8284181470267,14.2556028255666,11.0981422855263,7.98667486266517,14.3094328524703,6.64385011512993,10.3606602978995,10.8416815606097,9.66987327753543,13.3042503644545,9.84598897032347,4.82075221392973,5.66658419819295,9.59394491871155],"symbol":"circle","line":{"width":1.88976377952756,"color":"rgba(128,128,128,1)"}},"hoveron":"points","name":"G_22","legendgroup":"G_22","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"x":[2,3,6,7,10,17,18,20,23,25,27,30,32,33,35,36,38,39,40,42,47,48,49,52,54,56,57,61,64,66,72,73,74,75,77],"y":[0.00272479564032698,0.0487804878048781,0.0731319554848967,0.0581560283687943,0.0787119856887299,0.0693568726355612,0.00840336134453781,0.0116550116550117,0.00362756952841596,0.088379705400982,0.0691994572591588,0.00981767180925666,0.0348360655737705,0.00897666068222621,0.0754985754985755,0.0184275184275184,0.0568783068783069,0.0016750418760469,0.0161764705882353,0.0564603691639522,0.0471428571428571,0.0890302066772655,0.0301724137931034,0.0800627943485086,0.0451612903225806,0.0706214689265537,0.0564516129032258,0.0327613104524181,0.0567741935483871,0.0746666666666667,0.05858310626703,0.0179372197309417,0.0434782608695652,0.0501043841336117,0.0825396825396825],"text":["Markus Krämer","Huah Shin Ng","Yinshan Zhao","Jens Ingwersen","Huah Shin Ng","Joachim Havla","Marius Ringelstein","Yinshan Zhao","José Wijnands","Orhan Aktas","Ruth Ann Marrie","José Wijnands","Feng Zhu","Markus Krämer","Helen Tremlett","Markus Krämer","Yinshan Zhao","Charity Evans","Jens Ingwersen","Charity Evans","Marius Ringelstein","Joachim Havla","Yinshan Zhao","Marius Ringelstein","Jens Ingwersen","José Wijnands","Marius Ringelstein","Markus Krämer","Ruth Ann Marrie","Huah Shin Ng","Sven Meuth","John Fisk","Helen Tremlett","John Fisk","Yinshan Zhao"],"type":"scatter","mode":"markers","marker":{"autocolorscale":false,"color":"rgba(142,142,142,1)","opacity":0.2,"size":[4.12917437661234,10.5544785278967,13.9378598688634,11.857162920838,14.7131015777853,13.4133754232744,4.93786697576707,5.39211533723591,4.26214934085961,16.0562299980145,13.3915050633971,5.13565111237065,8.61672168101161,5.01809025516229,14.2666591528878,6.3353368061238,11.6796347764578,3.96151374822852,6.02205195538586,11.6215657257485,10.326927738619,16.1466027897694,7.96851901706018,14.9007698509382,10.0515813681304,13.5890705388749,11.6203491128828,8.32836253278992,11.665169088496,14.1510806181579,11.916501347746,6.26711280106531,9.81771287225765,10.7384329696287,15.244883328752],"symbol":"circle","line":{"width":1.88976377952756,"color":"rgba(142,142,142,1)"}},"hoveron":"points","name":"G_23","legendgroup":"G_23","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"x":[2,8,10,11,12,16,17,22,26,28,29,30,31,36,42,43,46,47,50,53,54,55,59,61,65,66,67,68,76,77,80],"y":[0.0217983651226158,0.0262237762237762,0.0232558139534884,0.0822122571001495,0.00452488687782805,0.0391891891891892,0.0340479192938209,0.0805555555555556,0.0241820768136558,0.0428134556574924,0.0237762237762238,0.0701262272089762,0.0741279069767442,0.0307125307125307,0.011943539630836,0.0446927374301676,0.0326295585412668,0.00857142857142857,0.0387878787878788,0.0585885486018642,0.0619354838709677,0.0506535947712418,0.0857142857142857,0.0405616224648986,0.0128205128205128,0.00666666666666667,0.0345945945945946,0.067524115755627,0.0347682119205298,0.0698412698412698,0.00974930362116992],"text":["John Fisk","Orhan Aktas","Sven Meuth","John Fisk","Feng Zhu","José Wijnands","Helen Tremlett","Marius Ringelstein","Philipp Albrecht","Charity Evans","Joachim Havla","Huah Shin Ng","Huah Shin Ng","Charity Evans","Marius Ringelstein","Feng Zhu","Philipp Albrecht","John Fisk","John Fisk","Helen Tremlett","José Wijnands","Yinshan Zhao","Sven Meuth","Charity Evans","Charity Evans","Orhan Aktas","Markus Krämer","Marius Ringelstein","John Fisk","Orhan Aktas","Charity Evans"],"type":"scatter","mode":"markers","marker":{"autocolorscale":false,"color":"rgba(87,87,87,1)","opacity":0.2,"size":[6.8042455269869,7.41960289423817,7.00692978773351,15.1993942896319,4.39116257002586,9.22169170324709,8.50718341112375,14.9692291853831,7.13572948950974,9.72533221798804,7.07929557438931,13.5202648297028,14.07622966762,8.04359529495988,5.43235495180286,9.98647321845525,8.31005044568917,4.96139321306332,9.16592235108324,11.9172575077059,12.3822779017279,10.8147447630264,15.6859277828252,9.41241318464867,5.55461836860493,4.69422668881907,8.58316176732884,13.1587423222186,8.6072913237553,13.4806746312747,5.12609899433324],"symbol":"circle","line":{"width":1.88976377952756,"color":"rgba(87,87,87,1)"}},"hoveron":"points","name":"G_24","legendgroup":"G_24","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"x":[1,2,6,7,17,23,26,35,36,41,48,49,55,56,58,59,60,61,63,65,67,69,72,74,75],"y":[0.0401284109149278,0.0190735694822888,0.0111287758346582,0.0397163120567376,0.0529634300126103,0.0652962515114873,0.0568990042674253,0.0427350427350427,0.0343980343980344,0.0403225806451613,0.068362480127186,0.0545977011494253,0.0964052287581699,0.0395480225988701,0.0864600326264274,0.0371428571428571,0.0546448087431694,0.0390015600624025,0.0146842878120411,0.0192307692307692,0.0291891891891892,0.0425219941348974,0.00953678474114441,0.0933977455716586,0.0281837160751566],"text":["Marius Ringelstein","Yinshan Zhao","Marius Ringelstein","Marius Ringelstein","Yinshan Zhao","Huah Shin Ng","Ruth Ann Marrie","Jens Ingwersen","Ruth Ann Marrie","José Wijnands","Joachim Havla","Hans-Peter Hartung","Philipp Albrecht","Charity Evans","Huah Shin Ng","Hans-Peter Hartung","Markus Krämer","Feng Zhu","Philipp Albrecht","Markus Krämer","Feng Zhu","Feng Zhu","Orhan Aktas","José Wijnands","Jens Ingwersen"],"type":"scatter","mode":"markers","marker":{"autocolorscale":false,"color":"rgba(5,5,5,1)","opacity":0.2,"size":[9.3522120172802,6.42522456014962,5.31870254294667,9.29494436319218,11.135688339624,12.8492129501864,11.682510506799,9.71443598275921,8.55584344832631,9.37919483350115,13.2752202268395,11.3627613000365,17.1711933890818,9.27155776395841,15.7895332960329,8.93731226764106,11.3693066024012,9.19561728740426,5.81428338039621,6.44709499066942,7.83184655115073,9.68483075532091,5.09640170641112,16.7533736430483,7.69207533763996],"symbol":"circle","line":{"width":1.88976377952756,"color":"rgba(5,5,5,1)"}},"hoveron":"points","name":"G_25","legendgroup":"G_25","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"x":[1,7,9,11,12,14,15,17,18,19,23,24,27,29,34,35,36,38,43,44,46,48,55,57,60,62,63,66,76],"y":[0.0834670947030498,0.0269503546099291,0.0530085959885387,0.0373692077727952,0.0407239819004525,0.0606060606060606,0.0704647676161919,0.0466582597730139,0.0784313725490196,0.0266106442577031,0.0423216444981862,0.121718377088305,0.0515603799185889,0.0167832167832168,0.0422125181950509,0.0512820512820513,0.0257985257985258,0.0264550264550265,0.0684357541899441,0.0152224824355972,0.0460652591170825,0.0317965023847377,0.0866013071895425,0.0510752688172043,0.0136612021857923,0.0256,0.0234948604992658,0.0106666666666667,0.0695364238410596],"text":["Helen Tremlett","John Fisk","José Wijnands","Charity Evans","Orhan Aktas","Markus Krämer","Marius Ringelstein","Yinshan Zhao","Joachim Havla","Huah Shin Ng","Huah Shin Ng","Huah Shin Ng","Orhan Aktas","Joachim Havla","Huah Shin Ng","Feng Zhu","Feng Zhu","Markus Krämer","Huah Shin Ng","Joachim Havla","Charity Evans","Feng Zhu","José Wijnands","José Wijnands","Charity Evans","Sven Meuth","Feng Zhu","Hans-Peter Hartung","Feng Zhu"],"type":"scatter","mode":"markers","marker":{"autocolorscale":false,"color":"rgba(15,15,15,1)","opacity":0.2,"size":[15.3737280431751,7.520615829142,11.141963938318,8.96876886275331,9.43497532473344,12.1975698658385,13.5672994749576,10.2595916137195,14.6741158356617,7.47338795230348,9.65699009390074,20.6878163060327,10.9407401033216,6.10650975907213,9.64182582779739,10.9020671920008,7.36048019653194,7.45175304166109,13.285400520947,5.88923135549626,10.1771920791963,8.19426288011152,15.8091603469179,10.8733353457866,5.67177049434225,7.33287855109748,7.04017088944831,5.25421045260948,13.4383211903897],"symbol":"circle","line":{"width":1.88976377952756,"color":"rgba(15,15,15,1)"}},"hoveron":"points","name":"G_26","legendgroup":"G_26","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"x":[3,4,6,9,11,15,22,24,31,32,33,35,36,37,38,42,43,46,48,49,52,53,58,60,63,64,65,66,67,68,73,76],"y":[0.016260162601626,0.0247074122236671,0.082670906200318,0.0300859598853868,0.0687593423019432,0.0269865067466267,0.00833333333333333,0.0739856801909308,0.0174418604651163,0.0204918032786885,0.100538599640934,0.066951566951567,0.0380835380835381,0.0415512465373961,0.0251322751322751,0.0206297502714441,0.0237430167597765,0.0633397312859885,0.0556438791732909,0.0833333333333333,0.0596546310832025,0.0652463382157124,0.0293637846655791,0.0765027322404372,0.00881057268722467,0.00774193548387097,0.0141025641025641,0.0546666666666667,0.0205405405405405,0.0868167202572347,0.0269058295964126,0.0993377483443709],"text":["Yinshan Zhao","Jens Ingwersen","Jens Ingwersen","Sven Meuth","Sven Meuth","John Fisk","Orhan Aktas","Joachim Havla","Philipp Albrecht","Ruth Ann Marrie","Hans-Peter Hartung","Yinshan Zhao","Marius Ringelstein","Marius Ringelstein","Huah Shin Ng","José Wijnands","Marius Ringelstein","Ruth Ann Marrie","Sven Meuth","John Fisk","John Fisk","Helen Tremlett","Hans-Peter Hartung","Yinshan Zhao","Markus Krämer","Feng Zhu","Charity Evans","Charity Evans","Yinshan Zhao","José Wijnands","John Fisk","Marius Ringelstein"],"type":"scatter","mode":"markers","marker":{"autocolorscale":false,"color":"rgba(114,114,114,1)","opacity":0.2,"size":[6.03370246400623,7.20877482984677,15.2631141527876,7.9565017723986,13.3303580381261,7.52564178892248,4.92806222534951,14.056469800733,6.19817818639104,6.62251839199849,17.7454265410863,13.0791952265183,9.06804042805043,9.54993454376823,7.26784791604257,6.64170649872376,7.07467805357636,12.577380668157,11.5081206463871,15.3551446849005,12.0653789687813,12.8422781929186,7.85611649029466,14.4061680644031,4.99485699669615,4.84520354817696,5.7332578654993,11.3723436219986,6.62929767011881,15.8390873336563,7.51442583731872,17.5785972145331],"symbol":"circle","line":{"width":1.88976377952756,"color":"rgba(114,114,114,1)"}},"hoveron":"points","name":"G_27","legendgroup":"G_27","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"x":[2,5,6,7,8,13,14,15,18,19,21,26,28,29,30,35,36,43,44,49,52,53,58,60,64,65,71,73,77,79],"y":[0.0435967302452316,0.0294117647058824,0.0461049284578696,0.0354609929078014,0.0594405594405594,0.040625,0.0560606060606061,0.0629685157421289,0.0266106442577031,0.030812324929972,0.0653409090909091,0.0725462304409673,0.0412844036697248,0.0307692307692308,0.0448807854137447,0.0598290598290598,0.0552825552825553,0.0572625698324022,0.0281030444964871,0.0732758620689655,0.00313971742543171,0.0625832223701731,0.0375203915171289,0.0437158469945355,0.0361290322580645,0.0576923076923077,0.0192878338278932,0.0463378176382661,0.0206349206349206,0.105476673427992],"text":["Orhan Aktas","Sven Meuth","Helen Tremlett","Ruth Ann Marrie","Feng Zhu","Markus Krämer","Huah Shin Ng","Charity Evans","Markus Krämer","Marius Ringelstein","Helen Tremlett","Feng Zhu","Hans-Peter Hartung","Orhan Aktas","John Fisk","Joachim Havla","Orhan Aktas","Marius Ringelstein","Charity Evans","Marius Ringelstein","Jens Ingwersen","Yinshan Zhao","Orhan Aktas","Yinshan Zhao","Huah Shin Ng","Feng Zhu","Marius Ringelstein","Jens Ingwersen","José Wijnands","Orhan Aktas"],"type":"scatter","mode":"markers","marker":{"autocolorscale":false,"color":"rgba(109,109,109,1)","opacity":0.2,"size":[9.83417516926495,7.86278600472849,10.1827042909146,8.70357383861528,12.0356359290361,9.42122039668503,11.5660217521259,12.5258049887426,7.47338795230348,8.05746652644241,12.8554174977186,13.8564835822345,9.51285340655282,8.05147651560188,10.0126036236347,12.0896140140171,11.4579172520716,11.7330248658212,7.68086086230831,13.9578531602172,4.19088107310049,12.472273285714,8.9897792175162,9.85072739830912,8.79641622083689,11.7927331679915,6.45503397699459,10.2150651143076,6.64242567784589,18.4314506232806],"symbol":"circle","line":{"width":1.88976377952756,"color":"rgba(109,109,109,1)"}},"hoveron":"points","name":"G_28","legendgroup":"G_28","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"x":[4,5,10,14,15,16,21,23,26,30,31,32,34,37,38,40,41,42,48,51,54,56,57,58,59,62,68,76,77,78,79,80],"y":[0.0598179453836151,0.0609243697478992,0.037567084078712,0.0318181818181818,0.0674662668665667,0.0148648648648649,0.0625,0.0326481257557437,0.0825035561877667,0.0112201963534362,0.0276162790697674,0.069672131147541,0.0436681222707424,0.056786703601108,0.0634920634920635,0.0352941176470588,0.0241935483870968,0.0608034744842562,0.0540540540540541,0.00161290322580645,0.0141935483870968,0.0692090395480226,0.0577956989247312,0.0440456769983687,0.0185714285714286,0.032,0.00321543408360129,0.0513245033112583,0.0301587301587302,0.0577249575551783,0.0425963488843813,0.0181058495821727],"text":["Joachim Havla","José Wijnands","Ruth Ann Marrie","Sven Meuth","José Wijnands","José Wijnands","Hans-Peter Hartung","Philipp Albrecht","John Fisk","Joachim Havla","Helen Tremlett","Jens Ingwersen","Philipp Albrecht","Joachim Havla","Jens Ingwersen","Philipp Albrecht","Helen Tremlett","Jens Ingwersen","Sven Meuth","Philipp Albrecht","Orhan Aktas","Hans-Peter Hartung","José Wijnands","Orhan Aktas","Feng Zhu","Hans-Peter Hartung","Markus Krämer","Orhan Aktas","Huah Shin Ng","John Fisk","Joachim Havla","Marius Ringelstein"],"type":"scatter","mode":"markers","marker":{"autocolorscale":false,"color":"rgba(173,173,173,1)","opacity":0.2,"size":[12.0880697790086,12.2417953579063,8.99626817754689,8.19727617333379,13.1507050914184,5.83943168426229,12.4607105645568,8.31263109174655,15.239864315654,5.33145830248257,7.613192716735,13.4571755396165,9.84409566772106,11.6669072575513,12.5985452672779,8.68038171270128,7.1373245870966,12.2249983223882,11.2872248219429,3.9503378861924,5.74593179048765,13.3928363701697,11.8070984500142,9.89655979287256,6.3553604611676,8.22254757252369,4.20201764925874,10.907965776985,7.96661697066284,11.7972695737494,9.69516309929414,6.29057797016639],"symbol":"circle","line":{"width":1.88976377952756,"color":"rgba(173,173,173,1)"}},"hoveron":"points","name":"G_29","legendgroup":"G_29","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"x":[1,7,10,12,17,18,19,20,21,25,29,30,31,32,37,39,40,41,46,47,49,51,53,61,65,66,69,72,75,80],"y":[0.0208667736757624,0.0453900709219858,0.107334525939177,0.0799396681749623,0.0353089533417402,0.00980392156862745,0.0140056022408964,0.00466200466200466,0.0241477272727273,0.0932896890343699,0.020979020979021,0.0336605890603086,0.0872093023255814,0.055327868852459,0.00415512465373961,0.0871021775544389,0.0808823529411765,0.0161290322580645,0.103646833013436,0.0414285714285714,0.0330459770114943,0.0241935483870968,0.0359520639147803,0.0046801872074883,0.0333333333333333,0.024,0.0542521994134897,0.0681198910081744,0.0187891440501044,0.0612813370473538],"text":["Philipp Albrecht","Orhan Aktas","Feng Zhu","Yinshan Zhao","John Fisk","Ruth Ann Marrie","Markus Krämer","Joachim Havla","José Wijnands","José Wijnands","Jens Ingwersen","Charity Evans","Feng Zhu","Sven Meuth","Orhan Aktas","Markus Krämer","Huah Shin Ng","Markus Krämer","Markus Krämer","Marius Ringelstein","Charity Evans","Ruth Ann Marrie","Orhan Aktas","Markus Krämer","Charity Evans","Feng Zhu","Philipp Albrecht","Markus Krämer","Orhan Aktas","Orhan Aktas"],"type":"scatter","mode":"markers","marker":{"autocolorscale":false,"color":"rgba(35,35,35,1)","opacity":0.2,"size":[6.67467513903116,10.0833716311895,18.6895527644349,14.883663915528,8.68244356382904,5.13373004772828,5.71975078017987,4.4107226026807,7.13095325134829,16.7383616734348,6.69028778626602,8.45335055557125,15.8936280936152,11.4642132578937,4.33823922792428,15.8787454346208,15.0146311205307,6.01544809920043,18.177239627075,9.53288732960692,8.36792784359026,7.1373245870966,8.77182176087139,4.41331402523682,8.40786665460439,7.11041191012688,11.3147559544223,13.2415162145372,6.38565245819674,12.2913918875697],"symbol":"circle","line":{"width":1.88976377952756,"color":"rgba(35,35,35,1)"}},"hoveron":"points","name":"G_3","legendgroup":"G_3","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"x":[2,3,6,7,10,11,12,13,14,22,25,26,27,28,41,42,44,50,53,55,57,58,64,66,67,68,70,72,73,74],"y":[0.0735694822888283,0.0758807588075881,0.027027027027027,0.0808510638297872,0.0590339892665474,0.00747384155455904,0.0105580693815988,0.09375,0.0833333333333333,0.0819444444444444,0.00818330605564648,0.027027027027027,0.0176390773405699,0.0397553516819572,0.0032258064516129,0.0477741585233442,0.0187353629976581,0.0206060606060606,0.0292942743009321,0.0522875816993464,0.0201612903225806,0.0603588907014682,0.0438709677419355,0.0533333333333333,0.0464864864864865,0.0707395498392283,0.0791139240506329,0.0258855585831063,0.0896860986547085,0.0128824476650564],"text":["Helen Tremlett","Philipp Albrecht","Jens Ingwersen","Jens Ingwersen","Ruth Ann Marrie","Feng Zhu","José Wijnands","Hans-Peter Hartung","Orhan Aktas","Ruth Ann Marrie","Feng Zhu","Huah Shin Ng","Jens Ingwersen","John Fisk","Charity Evans","Sven Meuth","Huah Shin Ng","Jens Ingwersen","José Wijnands","Sven Meuth","Sven Meuth","José Wijnands","Helen Tremlett","Hans-Peter Hartung","Philipp Albrecht","Feng Zhu","Feng Zhu","Orhan Aktas","Ruth Ann Marrie","Huah Shin Ng"],"type":"scatter","mode":"markers","marker":{"autocolorscale":false,"color":"rgba(225,225,225,1)","opacity":0.2,"size":[13.9986465060605,14.3197564597598,7.53127500689429,15.0102841280687,11.9791471188661,4.8076046957407,5.23905078796859,16.8023112759166,15.3551446849005,15.1621872006057,4.90705216523682,7.53127500689429,6.22562386431618,9.30036955398046,4.20354078187851,10.4146482777751,6.37816969599224,6.63841134482448,7.84645410669112,11.0417821622727,6.57654342613559,12.1632283269601,9.87228263352896,11.1870845954311,10.2357231640203,13.6054759281971,14.7689430590872,7.37258051892156,16.2377244085309,5.56325077452488],"symbol":"circle","line":{"width":1.88976377952756,"color":"rgba(225,225,225,1)"}},"hoveron":"points","name":"G_30","legendgroup":"G_30","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"x":[3,8,10,12,13,15,21,25,27,31,33,34,35,38,39,40,42,43,46,50,52,53,54,55,60,61,65,72,77,78],"y":[0.0311653116531165,0.0751748251748252,0.00894454382826476,0.0467571644042232,0.0140625,0.0149925037481259,0.0795454545454545,0.0147299509001637,0.0542740841248304,0.0203488372093023,0.0771992818671454,0.0567685589519651,0.0698005698005698,0.0185185185185185,0.0452261306532663,0.0308823529411765,0.0173724212812161,0.0307262569832402,0.0287907869481766,0.04,0.0580847723704867,0.0798934753661784,0.0606451612903226,0.0931372549019608,0.0614754098360656,0.0904836193447738,0.0346153846153846,0.0190735694822888,0.0174603174603175,0.0356536502546689],"text":["Marius Ringelstein","Orhan Aktas","John Fisk","Orhan Aktas","Jens Ingwersen","Charity Evans","Helen Tremlett","Marius Ringelstein","John Fisk","Yinshan Zhao","Joachim Havla","Ruth Ann Marrie","Yinshan Zhao","Hans-Peter Hartung","José Wijnands","Sven Meuth","Joachim Havla","Jens Ingwersen","Marius Ringelstein","Jens Ingwersen","John Fisk","José Wijnands","Hans-Peter Hartung","Joachim Havla","Ruth Ann Marrie","Markus Krämer","Joachim Havla","Feng Zhu","John Fisk","Ruth Ann Marrie"],"type":"scatter","mode":"markers","marker":{"autocolorscale":false,"color":"rgba(228,228,228,1)","opacity":0.2,"size":[8.10653068739915,14.221679989123,5.01359805141763,10.2733347097991,5.72767687551561,5.85720656681427,14.8288957340453,5.82064285731341,11.3177967040768,6.60263178863812,14.5029404847071,11.6643862075692,13.4750200186681,6.34799861505516,10.0605912805163,8.06720027354598,6.18851442176921,8.04550322700927,7.7764652731149,9.33436733299979,11.8472625615183,14.8772463413982,12.2030024719105,16.717184454347,12.3183560499551,16.3485220689964,8.58605119660188,6.42522456014962,6.20074680006166,8.73034901066216],"symbol":"circle","line":{"width":1.88976377952756,"color":"rgba(228,228,228,1)"}},"hoveron":"points","name":"G_31","legendgroup":"G_31","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"x":[3,4,8,9,11,14,15,19,20,21,27,29,35,36,37,38,43,44,46,49,50,53,54,58,63,65,66,67,69,71,74,75,76,77,78],"y":[0.040650406504065,0.0689206762028609,0.0122377622377622,0.0787965616045845,0.0239162929745889,0.05,0.0254872563718141,0.0280112044817927,0.1002331002331,0.0752840909090909,0.0447761194029851,0.0601398601398601,0.037037037037037,0.00737100737100737,0.00831024930747922,0.0383597883597884,0.0405027932960894,0.0456674473067916,0.0191938579654511,0.0387931034482759,0.0581818181818182,0.0319573901464714,0.0270967741935484,0.0946166394779772,0.0220264317180617,0.0217948717948718,0.0506666666666667,0.0389189189189189,0.0219941348973607,0.0103857566765579,0.0805152979066023,0.0448851774530271,0.043046357615894,0.0111111111111111,0.0730050933786078],"text":["Orhan Aktas","Jens Ingwersen","Yinshan Zhao","Huah Shin Ng","Yinshan Zhao","Philipp Albrecht","John Fisk","Helen Tremlett","Marius Ringelstein","Joachim Havla","Feng Zhu","Markus Krämer","José Wijnands","Markus Krämer","Huah Shin Ng","Huah Shin Ng","Feng Zhu","Joachim Havla","Hans-Peter Hartung","John Fisk","Charity Evans","Philipp Albrecht","Sven Meuth","Joachim Havla","John Fisk","José Wijnands","Yinshan Zhao","Hans-Peter Hartung","Jens Ingwersen","Charity Evans","Helen Tremlett","Marius Ringelstein","Jens Ingwersen","José Wijnands","Jens Ingwersen"],"type":"scatter","mode":"markers","marker":{"autocolorscale":false,"color":"rgba(30,30,30,1)","opacity":0.2,"size":[9.42475099007842,13.3527728470863,5.4733810636719,14.724851752777,7.09877241925341,10.7239289483041,7.31720330346703,7.66809376433811,17.7029847868243,14.2368604610459,9.99805965547519,12.1327964050561,8.92260609274892,4.79317573939566,4.92482990229221,9.10643096758194,9.4042380247912,10.1219144196675,6.44195975518269,9.16664841497718,11.8607461749229,8.21662512794391,7.54097138095653,16.9227107576297,6.83596416243153,6.80375968236851,10.8165610741778,9.18413279714694,6.83147248880386,5.21499357488793,14.9636361912398,10.0132139233577,9.75769613169662,5.31623770566285,13.9202346015707],"symbol":"circle","line":{"width":1.88976377952756,"color":"rgba(30,30,30,1)"}},"hoveron":"points","name":"G_32","legendgroup":"G_32","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"x":[4,7,12,14,19,20,22,24,26,30,36,41,42,43,46,50,53,54,56,57,60,66,68,70,71,75,77,78,80],"y":[0.0650195058517555,0.0836879432624113,0.0588235294117647,0.0378787878787879,0.00140056022408964,0.125874125874126,0.00694444444444444,0.0620525059665871,0.0625889046941678,0.0546984572230014,0.0614250614250614,0.082258064516129,0.0423452768729642,0.0824022346368715,0.111324376199616,0.00363636363636364,0.0066577896138482,0.00903225806451613,0.019774011299435,0.0658602150537634,0.0792349726775956,0.0653333333333333,0.0803858520900322,0.00474683544303797,0.0786350148367952,0.0563674321503132,0.0333333333333333,0.0271646859083192,0.0571030640668524],"text":["Sven Meuth","Markus Krämer","Ruth Ann Marrie","Jens Ingwersen","Charity Evans","José Wijnands","Sven Meuth","Huah Shin Ng","Hans-Peter Hartung","José Wijnands","Feng Zhu","Markus Krämer","Markus Krämer","Hans-Peter Hartung","Jens Ingwersen","Yinshan Zhao","Joachim Havla","Joachim Havla","Markus Krämer","Markus Krämer","Orhan Aktas","Markus Krämer","Philipp Albrecht","Orhan Aktas","Helen Tremlett","Helen Tremlett","Orhan Aktas","Markus Krämer","Feng Zhu"],"type":"scatter","mode":"markers","marker":{"autocolorscale":false,"color":"rgba(46,46,46,1)","opacity":0.2,"size":[12.8107629780545,15.4044103436736,11.9499058047885,9.03958612860748,3.90924811531443,21.2651464099219,4.73327738560369,12.3985367177572,12.4730627743424,11.3767607170321,12.3113607247492,15.2057582908937,9.66027406180449,15.2257877695329,19.2438412698958,4.26342481649001,4.69297808257451,5.02586617516743,6.52266960923535,12.927567736222,14.7857603907376,12.8543649519879,14.9456522840526,4.42280844332403,14.7024079762606,11.6086528627234,8.40786665460439,7.55041255163565,11.7108629025685],"symbol":"circle","line":{"width":1.88976377952756,"color":"rgba(46,46,46,1)"}},"hoveron":"points","name":"G_33","legendgroup":"G_33","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"x":[2,3,4,5,6,7,13,15,16,19,22,25,27,28,34,36,37,44,46,58,60,61,63,69,70,71,75,77],"y":[0.0286103542234332,0.0799457994579946,0.00390117035110533,0.0882352941176471,0.0365659777424483,0.0553191489361702,0.021875,0.047976011994003,0.0445945945945946,0.00840336134453781,0.00138888888888889,0.0965630114566285,0.0773405698778833,0.00458715596330275,0.0465793304221252,0.0282555282555283,0.0706371191135734,0.022248243559719,0.0652591170825336,0.0717781402936378,0.0150273224043716,0.0171606864274571,0.0543318649045521,0.00879765395894428,0.069620253164557,0.0816023738872404,0.00835073068893528,0.0555555555555556],"text":["John Fisk","Sven Meuth","Charity Evans","Charity Evans","Helen Tremlett","José Wijnands","Orhan Aktas","Yinshan Zhao","Charity Evans","Yinshan Zhao","Sven Meuth","José Wijnands","Joachim Havla","Yinshan Zhao","Markus Krämer","Helen Tremlett","Yinshan Zhao","José Wijnands","Charity Evans","Ruth Ann Marrie","Marius Ringelstein","Orhan Aktas","Hans-Peter Hartung","John Fisk","Helen Tremlett","Marius Ringelstein","John Fisk","Philipp Albrecht"],"type":"scatter","mode":"markers","marker":{"autocolorscale":false,"color":"rgba(219,219,219,1)","opacity":0.2,"size":[7.75138327030356,14.8845157355885,4.30171119786961,16.0361672257285,8.8571409938981,11.4630016862305,6.81490369843077,10.4426960872781,9.97283565381475,4.93786697576707,3.90680338520049,17.1931135768741,14.5225697667695,4.40004928459801,10.2486241324779,7.70205819585431,13.5912448737934,6.86681220110589,12.8440536386117,13.7497706360884,5.86205525456207,6.15904667497852,11.3258249954057,4.99304960046947,13.4499679286098,15.1146634667651,4.93049818237444,11.4958487162385],"symbol":"circle","line":{"width":1.88976377952756,"color":"rgba(219,219,219,1)"}},"hoveron":"points","name":"G_34","legendgroup":"G_34","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"x":[1,5,6,9,10,11,18,24,27,30,33,36,37,38,41,45,50,51,54,55,57,58,61,63,67,68,69,72,75,80],"y":[0.0128410914927769,0.00630252100840336,0.0381558028616852,0.0558739255014327,0.0930232558139535,0.0881913303437967,0.0392156862745098,0.00477326968973747,0.00814111261872456,0.00701262272089762,0.0502692998204668,0.0687960687960688,0.0193905817174515,0.0330687830687831,0.0951612903225806,0.0808580858085809,0.0181818181818182,0.0370967741935484,0.0529032258064516,0.00980392156862745,0.0134408602150538,0.0636215334420881,0.0249609984399376,0.0807635829662261,0.04,0.0160771704180064,0.0865102639296188,0.0299727520435967,0.0438413361169102,0.0682451253481894],"text":["Joachim Havla","Philipp Albrecht","Marius Ringelstein","Helen Tremlett","Jens Ingwersen","Marius Ringelstein","Sven Meuth","Charity Evans","Huah Shin Ng","Yinshan Zhao","Hans-Peter Hartung","Charity Evans","José Wijnands","Huah Shin Ng","Helen Tremlett","Marius Ringelstein","Sven Meuth","Ruth Ann Marrie","Sven Meuth","Sven Meuth","Feng Zhu","Markus Krämer","Feng Zhu","Sven Meuth","Marius Ringelstein","Charity Evans","John Fisk","Helen Tremlett","Hans-Peter Hartung","Markus Krämer"],"type":"scatter","mode":"markers","marker":{"autocolorscale":false,"color":"rgba(244,244,244,1)","opacity":0.2,"size":[5.55748663045899,4.64297121824315,9.0780830944149,11.5400838936628,16.7013468984269,16.0300594251823,9.22537393898248,4.42657225878349,4.901142195851,4.74285636429047,10.7613477342422,13.3354606081153,6.46932837716253,8.3710976030503,16.9983773079464,15.0112596907578,6.30114890799749,8.93090796975934,11.1273232467446,5.13373004772828,5.64106973553426,12.6165334394209,7.24403375796453,14.9981304207826,9.33436733299979,6.00822835584757,15.7965118518148,7.9407656210337,9.86816509194646,13.2589155958577],"symbol":"circle","line":{"width":1.88976377952756,"color":"rgba(244,244,244,1)"}},"hoveron":"points","name":"G_35","legendgroup":"G_35","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"x":[2,4,7,8,10,13,14,16,17,19,20,24,26,27,28,29,30,34,37,41,44,46,47,48,53,57,60,64,65,66,67,68,69,73,75,77],"y":[0.0708446866485014,0.0325097529258778,0.0127659574468085,0.0891608391608392,0.0339892665474061,0.0734375,0.0696969696969697,0.00135135135135135,0.0277427490542245,0.0182072829131653,0.0163170163170163,0.112171837708831,0.0711237553342817,0.0759837177747626,0.0795107033639144,0.0125874125874126,0.0785413744740533,0.0407569141193595,0.0235457063711911,0.0645161290322581,0.0620608899297424,0.0575815738963532,0.0828571428571429,0.0238473767885533,0.0399467376830892,0.071236559139785,0.0778688524590164,0.00516129032258065,0.0423076923076923,0.0253333333333333,0.0572972972972973,0.0482315112540193,0.0806451612903226,0.00298953662182362,0.0407098121085595,0.0873015873015873],"text":["Hans-Peter Hartung","Feng Zhu","Ruth Ann Marrie","Sven Meuth","Jens Ingwersen","Feng Zhu","Ruth Ann Marrie","Philipp Albrecht","Feng Zhu","John Fisk","Hans-Peter Hartung","Ruth Ann Marrie","José Wijnands","Markus Krämer","Philipp Albrecht","Philipp Albrecht","Yinshan Zhao","Philipp Albrecht","Orhan Aktas","Hans-Peter Hartung","José Wijnands","Joachim Havla","Markus Krämer","José Wijnands","Sven Meuth","Charity Evans","Joachim Havla","Charity Evans","Charity Evans","Philipp Albrecht","José Wijnands","Sven Meuth","John Fisk","Markus Krämer","Marius Ringelstein","Feng Zhu"],"type":"scatter","mode":"markers","marker":{"autocolorscale":false,"color":"rgba(184,184,184,1)","opacity":0.2,"size":[13.6200829434747,8.29339869843447,5.54701427425783,16.1647512784851,8.49903163255226,13.9803099011835,13.4606264559748,3.89875036377373,7.63077421899148,6.30469226147742,6.04161675365538,19.3615743222739,13.6588548844395,14.3340606965655,14.8240677429391,5.52212660278726,14.6893984682182,9.43955171512759,7.04724127820919,12.7408256401374,12.399701568504,11.7773476934415,15.2889878912913,7.08918954139506,9.32696569819351,13.6745270831078,14.5959645268904,4.48170858079775,9.65505128924903,7.29580251101982,11.7378499476192,10.478197970847,14.9816781061469,4.16869038379498,9.43300623408903,15.9064490834621],"symbol":"circle","line":{"width":1.88976377952756,"color":"rgba(184,184,184,1)"}},"hoveron":"points","name":"G_36","legendgroup":"G_36","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"x":[1,2,3,4,5,8,11,14,17,19,21,23,28,30,31,32,34,40,41,47,49,50,52,55,60,61,62,64,67,69,70,73,74,76,77,78,79,80],"y":[0.028892455858748,0.0762942779291553,0.0596205962059621,0.05851755526658,0.0420168067226891,0.103146853146853,0.0224215246636771,0.0636363636363636,0.0113493064312736,0.0238095238095238,0.0355113636363636,0.0278113663845224,0.0611620795107034,0.0182328190743338,0.0537790697674419,0.0963114754098361,0.0553129548762737,0.0735294117647059,0.032258064516129,0.0642857142857143,0.0775862068965517,0.0703030303030303,0.0612244897959184,0.0833333333333333,0.00956284153005465,0.0639625585023401,0.0896,0.0516129032258065,0.052972972972973,0.0821114369501466,0.0221518987341772,0.0837070254110613,0.0225442834138486,0.0612582781456954,0.00476190476190476,0.00848896434634975,0.0344827586206897,0.0376044568245125],"text":["Ruth Ann Marrie","Ruth Ann Marrie","Markus Krämer","Joachim Havla","Hans-Peter Hartung","Hans-Peter Hartung","Sven Meuth","Helen Tremlett","Hans-Peter Hartung","Ruth Ann Marrie","Sven Meuth","Joachim Havla","Ruth Ann Marrie","Huah Shin Ng","Orhan Aktas","Helen Tremlett","Markus Krämer","Ruth Ann Marrie","Philipp Albrecht","Orhan Aktas","Orhan Aktas","Sven Meuth","Jens Ingwersen","Philipp Albrecht","Sven Meuth","Ruth Ann Marrie","Philipp Albrecht","Ruth Ann Marrie","José Wijnands","Ruth Ann Marrie","Ruth Ann Marrie","Markus Krämer","Huah Shin Ng","John Fisk","Jens Ingwersen","Huah Shin Ng","Sven Meuth","Philipp Albrecht"],"type":"scatter","mode":"markers","marker":{"autocolorscale":false,"color":"rgba(20,20,20,1)","opacity":0.2,"size":[7.79059820501518,14.3772072416138,12.0606501769423,11.9073936664048,9.61462956684651,18.1077797320824,6.89091045127301,12.6185939021451,5.34947128573215,7.08392601692766,8.71057428409997,7.64031316000226,12.2748224241828,6.3082455378266,11.2490173099217,17.1581685686429,11.4621410646876,13.9930794160976,8.25841639325015,12.7088126088226,14.5566963434318,13.5448287303222,12.2834936168343,15.3551446849005,5.10004329077559,12.6639144062034,16.225762918445,10.9480380462988,11.1370142889957,15.1853873948873,6.85341332155915,15.4070614095887,6.90798229861512,12.2881881190678,4.42495420352445,4.94985067311023,8.5676186033275,9.00146193937555],"symbol":"circle","line":{"width":1.88976377952756,"color":"rgba(20,20,20,1)"}},"hoveron":"points","name":"G_37","legendgroup":"G_37","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"x":[9,10,11,12,14,15,16,21,22,23,25,26,27,31,35,40,43,45,47,51,52,53,59,61,62,64,66,67,68,69,71,75],"y":[0.0128939828080229,0.0447227191413238,0.0553064275037369,0.0829562594268477,0.00151515151515152,0.0449775112443778,0.0743243243243243,0.0511363636363636,0.0597222222222222,0.0399032648125756,0.0540098199672668,0.00995732574679943,0.039348710990502,0.0348837209302326,0.0527065527065527,0.05,0.00977653631284916,0.0264026402640264,0.00428571428571429,0.0870967741935484,0.0125588697017268,0.0199733688415446,0.0228571428571429,0.0686427457098284,0.048,0.0593548387096774,0.064,0.0594594594594595,0.00803858520900321,0.0454545454545455,0.0548961424332344,0.0386221294363257],"text":["Markus Krämer","Sven Meuth","Orhan Aktas","Feng Zhu","Ruth Ann Marrie","Hans-Peter Hartung","José Wijnands","José Wijnands","Feng Zhu","Jens Ingwersen","Hans-Peter Hartung","Marius Ringelstein","Philipp Albrecht","Orhan Aktas","Feng Zhu","Sven Meuth","Marius Ringelstein","Joachim Havla","Jens Ingwersen","Joachim Havla","Charity Evans","Marius Ringelstein","Huah Shin Ng","Orhan Aktas","Marius Ringelstein","Marius Ringelstein","Markus Krämer","John Fisk","Philipp Albrecht","Markus Krämer","Marius Ringelstein","Marius Ringelstein"],"type":"scatter","mode":"markers","marker":{"autocolorscale":false,"color":"rgba(77,77,77,1)","opacity":0.2,"size":[5.56485849879025,9.99063936263854,11.4612341316343,15.3027580885656,3.93208992653064,10.0260442399544,14.1035183310267,10.8818243053824,12.0747700513753,9.32092445559783,11.281078750581,5.15516063151762,9.24386003481281,8.62334485228078,11.0999964134193,10.7239289483041,5.12990392458418,7.44446995796276,4.35696237841184,15.8779947549773,5.51814773746963,6.55040230206793,6.95149022537053,13.3141587672996,10.4460292490392,12.0237259111874,12.6691164079295,12.0382618924284,4.88677919033877,10.0923306899543,11.4042277951745,9.14288835394453],"symbol":"circle","line":{"width":1.88976377952756,"color":"rgba(77,77,77,1)"}},"hoveron":"points","name":"G_38","legendgroup":"G_38","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"x":[4,12,13,18,27,28,29,31,34,36,37,41,43,49,50,52,55,56,57,59,65,67,72,73,77,79],"y":[0.0403120936280884,0.052790346907994,0.0671875,0.046218487394958,0.0746268656716418,0.0336391437308868,0.0825174825174825,0.0813953488372093,0.0480349344978166,0.00122850122850123,0.0692520775623269,0.0838709677419355,0.00418994413407821,0.0129310344827586,0.00727272727272727,0.0141287284144427,0.042483660130719,0.0734463276836158,0.0725806451612903,0.0571428571428571,0.058974358974359,0.0302702702702703,0.0517711171662125,0.0373692077727952,0.0857142857142857,0.0973630831643002],"text":["Marius Ringelstein","Marius Ringelstein","Philipp Albrecht","Marius Ringelstein","Helen Tremlett","Sven Meuth","John Fisk","Yinshan Zhao","Ruth Ann Marrie","Philipp Albrecht","John Fisk","Sven Meuth","Yinshan Zhao","Orhan Aktas","Jens Ingwersen","Orhan Aktas","Markus Krämer","John Fisk","Feng Zhu","Sven Meuth","Marius Ringelstein","Huah Shin Ng","Jens Ingwersen","Orhan Aktas","John Fisk","José Wijnands"],"type":"scatter","mode":"markers","marker":{"autocolorscale":false,"color":"rgba(101,101,101,1)","opacity":0.2,"size":[9.37773750634913,11.1116392417197,13.1119746157747,10.1984837407041,14.1455509907476,8.45036997234711,15.2417990925979,15.0859015386271,10.4508834373563,3.86951515804385,13.3988158178555,15.4298377677246,4.34323515443188,5.57002255594858,4.77938193080839,5.73690254645977,9.67950385373107,13.9815363519085,13.8612649115616,11.7163918124046,11.9708620832028,7.98212118909008,10.9700213412179,8.96876886275331,15.6859277828252,17.3042646229158],"symbol":"circle","line":{"width":1.88976377952756,"color":"rgba(101,101,101,1)"}},"hoveron":"points","name":"G_39","legendgroup":"G_39","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"x":[4,5,7,12,14,17,20,22,23,24,26,27,30,32,34,35,37,41,45,48,53,61,68,69,71,72,74,75,78,79,80],"y":[0.0442132639791938,0.0252100840336134,0.0099290780141844,0.00301659125188537,0.00757575757575758,0.0617906683480454,0.0559440559440559,0.0527777777777778,0.00241837968561064,0.0954653937947494,0.0213371266002845,0.0352781546811398,0.0729312762973352,0.0737704918032787,0.0363901018922853,0.0356125356125356,0.0332409972299169,0.0741935483870968,0.0132013201320132,0.0190779014308426,0.00798934753661784,0.078003120124805,0.0289389067524116,0.0117302052785924,0.0741839762611276,0.0354223433242507,0.0466988727858293,0.0521920668058455,0.0288624787775891,0.0649087221095335,0.00139275766016713],"text":["Markus Krämer","Ruth Ann Marrie","Yinshan Zhao","Marius Ringelstein","Yinshan Zhao","Yinshan Zhao","José Wijnands","Markus Krämer","John Fisk","Huah Shin Ng","Hans-Peter Hartung","Yinshan Zhao","Charity Evans","Joachim Havla","Sven Meuth","John Fisk","Marius Ringelstein","Ruth Ann Marrie","Charity Evans","Huah Shin Ng","Huah Shin Ng","Orhan Aktas","Feng Zhu","Yinshan Zhao","Feng Zhu","Yinshan Zhao","Sven Meuth","Ruth Ann Marrie","Joachim Havla","Helen Tremlett","José Wijnands"],"type":"scatter","mode":"markers","marker":{"autocolorscale":false,"color":"rgba(10,10,10,1)","opacity":0.2,"size":[9.91984720783158,7.27866630308668,5.15121470028957,4.17269870882145,4.82190092443826,12.3621575103807,11.5498279942919,11.1098928179363,4.08257826394074,17.0406253803146,6.74009586911623,8.67816319361189,13.9099790083788,14.0265732104517,8.83269860955865,8.72463498202868,8.39503316811902,14.0853493644645,5.60769058827385,6.42582725011383,4.87988040380903,14.6146184365613,7.79705529312206,5.40260298405957,14.0840194893142,8.69820237378234,10.265234915802,11.0285107455336,7.78643111643243,12.7953711013778,3.90761665138123],"symbol":"circle","line":{"width":1.88976377952756,"color":"rgba(10,10,10,1)"}},"hoveron":"points","name":"G_4","legendgroup":"G_4","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"x":[1,5,11,12,19,20,21,22,26,27,28,29,34,43,47,48,55,56,58,60,63,64,65,68,71,72,73,76,80],"y":[0.0337078651685393,0.0777310924369748,0.0164424514200299,0.0135746606334842,0.0420168067226891,0.0606060606060606,0.0284090909090909,0.0402777777777778,0.0312944523470839,0.0271370420624152,0.0305810397553517,0.0839160839160839,0.0378457059679767,0.0349162011173184,0.0842857142857143,0.0635930047694754,0.0980392156862745,0.0211864406779661,0.066884176182708,0.0163934426229508,0.0616740088105727,0.0709677419354839,0.0474358974358974,0.0643086816720257,0.0489614243323442,0.0640326975476839,0.0254110612855007,0.0629139072847682,0.0250696378830084],"text":["Huah Shin Ng","Orhan Aktas","Feng Zhu","Charity Evans","Huah Shin Ng","Philipp Albrecht","Huah Shin Ng","Jens Ingwersen","Joachim Havla","Yinshan Zhao","Joachim Havla","Hans-Peter Hartung","Hans-Peter Hartung","Markus Krämer","Jens Ingwersen","Orhan Aktas","Orhan Aktas","José Wijnands","Markus Krämer","Ruth Ann Marrie","Sven Meuth","Jens Ingwersen","Orhan Aktas","Yinshan Zhao","Jens Ingwersen","Charity Evans","Yinshan Zhao","Hans-Peter Hartung","Yinshan Zhao"],"type":"scatter","mode":"markers","marker":{"autocolorscale":false,"color":"rgba(152,152,152,1)","opacity":0.2,"size":[8.45992122809251,14.5768254154811,6.05907747788135,5.65971281349476,9.61462956684651,12.1975698658385,7.72340535253758,9.37296880627819,8.12448072329455,7.54656947417512,8.02531818930771,15.4361057153374,9.03498869812732,8.62785896436286,15.4874580951447,12.6125697508277,17.3981971676853,6.71913756293561,13.0698322759991,6.0522554564867,12.3459490479313,13.6371794279593,10.3676463203563,12.7120036197274,10.5796196590017,12.6736592997826,7.30660949614554,12.5182178309811,7.25913892177281],"symbol":"circle","line":{"width":1.88976377952756,"color":"rgba(152,152,152,1)"}},"hoveron":"points","name":"G_40","legendgroup":"G_40","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"x":[1,2,3,5,7,13,14,15,17,23,27,30,31,32,34,37,41,42,43,44,49,50,58,60,61,63,64,69,79],"y":[0.0256821829855538,0.0722070844686648,0.0542005420054201,0.0168067226890756,0.00709219858156028,0.0453125,0.0787878787878788,0.0854572713643178,0.0567465321563682,0.0713422007255139,0.062415196743555,0.0252454417952314,0.0218023255813953,0.0225409836065574,0.00436681222707424,0.0734072022160665,0.0370967741935484,0.0260586319218241,0.0726256983240224,0.0105386416861827,0.0344827586206897,0.00484848484848485,0.0309951060358891,0.0491803278688525,0.062402496099844,0.0690161527165932,0.00645161290322581,0.0161290322580645,0.0709939148073022],"text":["Helen Tremlett","Helen Tremlett","Joachim Havla","Hans-Peter Hartung","Charity Evans","Feng Zhu","Helen Tremlett","Markus Krämer","José Wijnands","Hans-Peter Hartung","John Fisk","Sven Meuth","Sven Meuth","Feng Zhu","Sven Meuth","Huah Shin Ng","Yinshan Zhao","Joachim Havla","Orhan Aktas","Huah Shin Ng","José Wijnands","Marius Ringelstein","Sven Meuth","Joachim Havla","José Wijnands","Yinshan Zhao","Hans-Peter Hartung","Orhan Aktas","Huah Shin Ng"],"type":"scatter","mode":"markers","marker":{"autocolorscale":false,"color":"rgba(216,216,216,1)","opacity":0.2,"size":[7.34430474424516,13.8093650981534,11.3075784649529,6.10978148490449,4.7540340275741,10.0725927546858,14.7236454447395,15.6502211293079,11.6613257648538,13.689204206513,12.4489281943452,7.28358235339305,6.80479633898317,6.90752340274181,4.36857138143575,13.976100558995,8.93090796975934,7.39664301588205,13.867524267495,5.23633861311675,8.5676186033275,4.43727603254066,8.0828726649282,10.6100362497076,12.4471635956131,13.3660378018641,4.66396602170722,6.01544809920043,13.6408157121532],"symbol":"circle","line":{"width":1.88976377952756,"color":"rgba(216,216,216,1)"}},"hoveron":"points","name":"G_41","legendgroup":"G_41","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"x":[7,9,11,16,19,21,22,23,24,25,27,29,32,34,35,38,40,42,44,45,47,48,49,50,57,59,60,61,66,67,72,75,78],"y":[0.0737588652482269,0.00859598853868195,0.0463378176382661,0.00540540540540541,0.0518207282913165,0.00710227272727273,0.00277777777777778,0.0133010882708585,0.0190930787589499,0.0425531914893617,0.073270013568521,0.0531468531468531,0.116803278688525,0.0305676855895196,0.0242165242165242,0.041005291005291,0.0411764705882353,0.0228013029315961,0.0421545667447307,0.0874587458745875,0.0142857142857143,0.0206677265500795,0.0100574712643678,0.0654545454545455,0.0752688172043011,0.00857142857142857,0.0109289617486339,0.0140405616224649,0.0226666666666667,0.0183783783783784,0.0749318801089918,0.0219206680584551,0.0407470288624788],"text":["Huah Shin Ng","Ruth Ann Marrie","Marius Ringelstein","Feng Zhu","Huah Shin Ng","John Fisk","John Fisk","Joachim Havla","Hans-Peter Hartung","Orhan Aktas","Marius Ringelstein","Markus Krämer","Jens Ingwersen","Marius Ringelstein","Huah Shin Ng","Yinshan Zhao","Marius Ringelstein","Hans-Peter Hartung","Yinshan Zhao","José Wijnands","Joachim Havla","Hans-Peter Hartung","Charity Evans","Ruth Ann Marrie","Ruth Ann Marrie","Charity Evans","Marius Ringelstein","Helen Tremlett","Sven Meuth","Charity Evans","John Fisk","Philipp Albrecht","José Wijnands"],"type":"scatter","mode":"markers","marker":{"autocolorscale":false,"color":"rgba(40,40,40,1)","opacity":0.2,"size":[14.024957907399,4.96483055304248,10.2150651143076,4.51630292723055,10.9769146345617,4.75544889750323,4.13712941221872,5.62159341183526,6.42793881934983,9.68916594437081,13.9570406139969,11.161174103559,20.0049930044737,8.02346196910296,7.1405193224682,9.47406706427194,9.49785471831279,6.94372491596959,9.63377284468237,15.9282828438931,5.75876986148403,6.64698885290071,5.16914898328202,12.8712056799468,14.2347384598495,4.96139321306332,5.29081953075614,5.72462078911927,6.92500172737481,6.32849934579695,14.1879272079372,6.82125504788573,9.43817802128825],"symbol":"circle","line":{"width":1.88976377952756,"color":"rgba(40,40,40,1)"}},"hoveron":"points","name":"G_42","legendgroup":"G_42","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"x":[2,4,6,15,16,17,18,21,22,25,26,27,39,40,41,42,47,56,61,63,70,74,75,77,79],"y":[0.0476839237057221,0.070221066319896,0.0174880763116057,0.0134932533733133,0.0756756756756757,0.0706179066834805,0.00280112044817927,0.00142045454545455,0.0736111111111111,0.0834697217675941,0.0227596017069701,0.0488466757123474,0.0368509212730318,0.0191176470588235,0.0193548387096774,0.0358306188925081,0.01,0.038135593220339,0.015600624024961,0.0308370044052863,0.0617088607594937,0.0628019323671498,0.058455114822547,0.0920634920634921,0.0365111561866126],"text":["Orhan Aktas","Markus Krämer","Markus Krämer","Charity Evans","Feng Zhu","José Wijnands","Huah Shin Ng","Huah Shin Ng","Joachim Havla","Yinshan Zhao","Charity Evans","Markus Krämer","José Wijnands","Huah Shin Ng","Charity Evans","Orhan Aktas","José Wijnands","José Wijnands","John Fisk","Ruth Ann Marrie","Sven Meuth","Markus Krämer","Markus Krämer","Sven Meuth","Jens Ingwersen"],"type":"scatter","mode":"markers","marker":{"autocolorscale":false,"color":"rgba(200,200,200,1)","opacity":0.2,"size":[10.4021100110131,13.5334411760133,6.20460991135506,5.64837006723449,14.2912639554857,13.5885756240396,4.14062620564217,3.91335761923915,14.0044300933198,15.3740930190683,6.9379257612925,10.5636753427945,8.8967408798157,6.43135691139025,6.46435579549246,8.75494368468332,5.16112157064298,9.07527455356494,5.94188307090049,8.060896924789,12.3507913147936,12.5026603199956,11.8987181639549,16.5680096631639,8.84952216666223],"symbol":"circle","line":{"width":1.88976377952756,"color":"rgba(200,200,200,1)"}},"hoveron":"points","name":"G_43","legendgroup":"G_43","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"x":[1,2,4,5,10,12,16,19,22,23,28,29,33,36,44,45,46,47,50,52,55,57,58,61,63,64,65,66,67,71,73,77,79,80],"y":[0.0561797752808989,0.0544959128065395,0.0377113133940182,0.0840336134453782,0.0697674418604651,0.0392156862745098,0.0324324324324324,0.0322128851540616,0.0361111111111111,0.0701330108827086,0.0504587155963303,0.0727272727272727,0.0125673249551167,0.058968058968059,0.0199063231850117,0.0907590759075908,0.036468330134357,0.0757142857142857,0.0666666666666667,0.0816326530612245,0.0751633986928105,0.0551075268817204,0.0407830342577488,0.0358814352574103,0.0822320117474303,0.00387096774193548,0.00641025641025641,0.0133333333333333,0.0562162162162162,0.0237388724035608,0.0822122571001495,0.00793650793650794,0.0933062880324544,0.0222841225626741],"text":["Marius Ringelstein","Philipp Albrecht","John Fisk","John Fisk","Marius Ringelstein","José Wijnands","Hans-Peter Hartung","Helen Tremlett","Hans-Peter Hartung","John Fisk","Helen Tremlett","Philipp Albrecht","Joachim Havla","Markus Krämer","Huah Shin Ng","Sven Meuth","Sven Meuth","Jens Ingwersen","Markus Krämer","Charity Evans","Joachim Havla","Markus Krämer","Markus Krämer","Ruth Ann Marrie","John Fisk","Hans-Peter Hartung","Sven Meuth","Huah Shin Ng","Hans-Peter Hartung","Jens Ingwersen","Philipp Albrecht","Charity Evans","Feng Zhu","Hans-Peter Hartung"],"type":"scatter","mode":"markers","marker":{"autocolorscale":false,"color":"rgba(238,238,238,1)","opacity":0.2,"size":[11.582579402558,11.3486184461787,9.0163119789097,15.4524339797811,13.4704174264672,9.22537393898248,8.28265191220437,8.25213685972651,8.79392560523757,13.5212073105623,10.7876667061071,13.8816362670221,5.51932640249469,11.9699867598714,6.54107564462613,16.386790566446,8.84357040835909,14.2966281066443,13.0396125303317,15.1188701423263,14.2200924885457,11.4335982540734,9.44318147035017,8.7620060012524,15.2021387929124,4.29735541947031,4.65814363568445,5.6260866655193,11.5876425889908,7.07410176933753,15.1993942896319,4.87247612230474,16.7406677224382,6.87180193746133],"symbol":"circle","line":{"width":1.88976377952756,"color":"rgba(238,238,238,1)"}},"hoveron":"points","name":"G_44","legendgroup":"G_44","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"x":[1,4,5,6,8,10,11,16,18,19,22,26,33,34,35,36,47,50,51,53,54,57,59,60,62,63,68,69,71,75],"y":[0.0658105939004815,0.0663198959687906,0.0147058823529412,0.0445151033386327,0.0786713286713287,0.0429338103756708,0.00298953662182362,0.022972972972973,0.0756302521008403,0.0476190476190476,0.00555555555555556,0.0682788051209104,0.0915619389587074,0.0684133915574964,0.00427350427350427,0.0196560196560197,0.06,0.0521212121212121,0.0838709677419355,0.00532623169107856,0.0567741935483871,0.0403225806451613,0.0128571428571429,0.00273224043715847,0.024,0.0778267254038179,0.0418006430868167,0.0777126099706745,0.0356083086053412,0.0396659707724426],"text":["Huah Shin Ng","Orhan Aktas","Yinshan Zhao","Yinshan Zhao","Feng Zhu","José Wijnands","Hans-Peter Hartung","Helen Tremlett","Ruth Ann Marrie","Markus Krämer","Jens Ingwersen","Marius Ringelstein","John Fisk","Sven Meuth","Huah Shin Ng","José Wijnands","Ruth Ann Marrie","Jens Ingwersen","Ruth Ann Marrie","Markus Krämer","Helen Tremlett","Helen Tremlett","Hans-Peter Hartung","John Fisk","Marius Ringelstein","Philipp Albrecht","Ruth Ann Marrie","Yinshan Zhao","Yinshan Zhao","Philipp Albrecht"],"type":"scatter","mode":"markers","marker":{"autocolorscale":false,"color":"rgba(163,163,163,1)","opacity":0.2,"size":[12.920673583132,12.9914337959837,5.81729085446389,9.96178983148511,14.707453076896,9.74205664899111,4.16869038379498,6.96759786945893,14.28495318875,10.3930953719125,4.53755056876278,13.2635948798976,16.4983302527836,13.282293580414,4.35521335983176,6.50625538658905,12.1133643374736,11.0186657610221,15.4298377677246,4.50509001997987,11.665169088496,9.37919483350115,5.55972385347194,4.13029374856188,7.11041191012688,14.590111781648,9.58459116193163,14.5742576310076,8.72404752091758,9.28794861764435],"symbol":"circle","line":{"width":1.88976377952756,"color":"rgba(163,163,163,1)"}},"hoveron":"points","name":"G_45","legendgroup":"G_45","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"x":[1,2,8,11,15,16,22,23,29,31,33,34,39,41,42,45,46,50,51,54,57,61,63,67,68,70,71,72,74,77,80],"y":[0.0417335473515249,0.0790190735694823,0.0472027972027972,0.062780269058296,0.0284857571214393,0.0351351351351351,0.0166666666666667,0.0350665054413543,0.0405594405594406,0.0479651162790698,0.0251346499102334,0.0786026200873362,0.085427135678392,0.0387096774193548,0.0141150922909881,0.0643564356435644,0.0383877159309021,0.0642424242424242,0.0338709677419355,0.0490322580645161,0.00268817204301075,0.0124804992199688,0.0484581497797357,0.0497297297297297,0.0627009646302251,0.0474683544303797,0.029673590504451,0.0762942779291553,0.0193236714975845,0.0666666666666667,0.0264623955431755],"text":["Huah Shin Ng","Hans-Peter Hartung","Charity Evans","Markus Krämer","Huah Shin Ng","Helen Tremlett","Feng Zhu","Marius Ringelstein","Helen Tremlett","José Wijnands","Hans-Peter Hartung","John Fisk","Philipp Albrecht","Feng Zhu","Feng Zhu","Jens Ingwersen","Jens Ingwersen","Philipp Albrecht","Helen Tremlett","José Wijnands","Markus Krämer","Orhan Aktas","Feng Zhu","Jens Ingwersen","José Wijnands","Markus Krämer","Huah Shin Ng","Hans-Peter Hartung","Yinshan Zhao","Ruth Ann Marrie","Sven Meuth"],"type":"scatter","mode":"markers","marker":{"autocolorscale":false,"color":"rgba(25,25,25,1)","opacity":0.2,"size":[9.57526742390988,14.7557654426402,10.3352565494539,12.4996504739372,7.73406286997253,8.65828642238224,6.09028718749377,8.64874828313469,9.41210997761707,10.4411821145606,7.26817810106084,14.6979073558838,15.6460344184683,9.15505480560379,5.73500304310251,12.7186383939149,9.11031205456878,12.7027980359359,8.48258998061962,10.5894619947938,4.12366003012949,5.50722260307906,10.5096895520536,10.6863752315374,12.4886321122006,10.3721562823147,7.89918112687453,14.3772072416138,6.46001977850641,13.0396125303317,7.45277754048549],"symbol":"circle","line":{"width":1.88976377952756,"color":"rgba(25,25,25,1)"}},"hoveron":"points","name":"G_46","legendgroup":"G_46","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"x":[3,6,7,9,10,11,14,18,21,25,26,27,30,31,33,35,36,39,43,44,45,47,49,52,53,54,58,59,63,65,71,73,76,79],"y":[0.0623306233062331,0.0095389507154213,0.0695035460992908,0.0286532951289398,0.0912343470483005,0.0538116591928251,0.0515151515151515,0.0490196078431373,0.0269886363636364,0.0360065466448445,0.085348506401138,0.0556309362279511,0.0462833099579243,0.0116279069767442,0.0305206463195691,0.0441595441595442,0.027027027027027,0.0301507537688442,0.0614525139664804,0.00117096018735363,0.00495049504950495,0.0285714285714286,0.0431034482758621,0.0784929356357928,0.0452729693741678,0.072258064516129,0.0522022838499184,0.0442857142857143,0.0293685756240822,0.0282051282051282,0.0608308605341246,0.0119581464872945,0.0264900662251656,0.00811359026369168],"text":["Philipp Albrecht","Feng Zhu","Huah Shin Ng","Sven Meuth","Orhan Aktas","Joachim Havla","Philipp Albrecht","Jens Ingwersen","Sven Meuth","Yinshan Zhao","Yinshan Zhao","Helen Tremlett","José Wijnands","Joachim Havla","Sven Meuth","Joachim Havla","Hans-Peter Hartung","Markus Krämer","Ruth Ann Marrie","Ruth Ann Marrie","Jens Ingwersen","Helen Tremlett","Marius Ringelstein","Marius Ringelstein","Jens Ingwersen","Markus Krämer","John Fisk","Hans-Peter Hartung","Sven Meuth","John Fisk","Yinshan Zhao","Sven Meuth","John Fisk","Huah Shin Ng"],"type":"scatter","mode":"markers","marker":{"autocolorscale":false,"color":"rgba(212,212,212,1)","opacity":0.2,"size":[12.4371777502154,5.09670441821217,13.4337533553167,7.75735251638632,16.4528187718379,11.2535454301608,10.9344557610934,10.5877042490237,7.52593785325024,8.77939359666973,15.6351105563235,11.5063223178397,10.2074910755327,5.3883347727989,8.01692353418983,9.91238245834679,7.53127500689429,7.96550823962212,12.3151749357928,3.8532384838514,4.45178015397482,7.74597217717328,9.76562939910481,14.682668832214,10.0670997682014,13.8164478995062,11.0299303638676,9.92991468314362,7.85678246298593,7.69505191512494,12.2288033064918,5.43439189641413,7.45662449568113,4.89728690678427],"symbol":"circle","line":{"width":1.88976377952756,"color":"rgba(212,212,212,1)"}},"hoveron":"points","name":"G_47","legendgroup":"G_47","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"x":[3,7,13,14,15,24,25,30,32,36,37,38,41,42,48,49,50,51,53,57,58,59,61,62,64,65,66,71,72,74,75,78,80],"y":[0.0555555555555556,0.0170212765957447,0.01875,0.0272727272727273,0.04047976011994,0.045346062052506,0.0556464811783961,0.0813464235624123,0.040983606557377,0.0565110565110565,0.00554016620498615,0.0396825396825397,0.0112903225806452,0.0510314875135722,0.0492845786963434,0.028735632183908,0.00606060606060606,0.00645161290322581,0.0732356857523302,0.010752688172043,0.0032626427406199,0.0771428571428571,0.0733229329173167,0.0032,0.0296774193548387,0.0538461538461538,0.0146666666666667,0.0252225519287834,0.061307901907357,0.0740740740740741,0.0260960334029228,0.0543293718166384,0.0236768802228412],"text":["Huah Shin Ng","Orhan Aktas","Charity Evans","Joachim Havla","Jens Ingwersen","Philipp Albrecht","Huah Shin Ng","Hans-Peter Hartung","Markus Krämer","Jens Ingwersen","Charity Evans","Yinshan Zhao","Charity Evans","Sven Meuth","Joachim Havla","Charity Evans","Philipp Albrecht","Sven Meuth","Marius Ringelstein","Yinshan Zhao","Markus Krämer","José Wijnands","Yinshan Zhao","Hans-Peter Hartung","Orhan Aktas","Philipp Albrecht","Feng Zhu","Orhan Aktas","Hans-Peter Hartung","Joachim Havla","Orhan Aktas","Yinshan Zhao","Yinshan Zhao"],"type":"scatter","mode":"markers","marker":{"autocolorscale":false,"color":"rgba(231,231,231,1)","opacity":0.2,"size":[11.4958487162385,6.13964387473849,6.38020620435165,7.56543252406946,9.40103723125252,10.0772563748022,11.50848217614,15.079104363112,9.47105372050797,11.6286083286876,4.53537382944745,9.29025113961624,5.34124228723503,10.8672520496562,10.6245218541654,7.768798216265,4.60887496757959,4.66396602170722,13.9522713677404,5.26621758420313,4.20894542803661,14.4951013405247,13.9643928258079,4.19975015440088,7.89971335364006,11.258338270151,5.81182926491839,7.28039980783251,12.295082768124,14.0687505499651,7.40184293378941,11.3254785959211,7.06548156116427],"symbol":"circle","line":{"width":1.88976377952756,"color":"rgba(231,231,231,1)"}},"hoveron":"points","name":"G_48","legendgroup":"G_48","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"x":[8,10,11,14,15,19,22,23,28,31,32,33,34,37,39,40,42,43,44,51,53,58,59,60,62,65,66,74,77,80],"y":[0.00699300699300699,0.0715563506261181,0.0119581464872945,0.0909090909090909,0.0209895052473763,0.00560224089635854,0.0638888888888889,0.0120918984280532,0.0703363914373089,0.00581395348837209,0.0368852459016393,0.104129263913824,0.0844250363901019,0.0512465373961219,0.0753768844221105,0.0882352941176471,0.0445168295331162,0.0251396648044693,0.031615925058548,0.0387096774193548,0.0306258322237017,0.0489396411092985,0.02,0.0628415300546448,0.0528,0.0371794871794872,0.0386666666666667,0.0386473429951691,0.00317460317460317,0.00696378830083565],"text":["Feng Zhu","Hans-Peter Hartung","Huah Shin Ng","Helen Tremlett","Charity Evans","Huah Shin Ng","Markus Krämer","Joachim Havla","Markus Krämer","Sven Meuth","Sven Meuth","Joachim Havla","Jens Ingwersen","Sven Meuth","John Fisk","Helen Tremlett","Joachim Havla","Marius Ringelstein","Hans-Peter Hartung","Sven Meuth","Markus Krämer","Helen Tremlett","Feng Zhu","Sven Meuth","Hans-Peter Hartung","Joachim Havla","Markus Krämer","Markus Krämer","Marius Ringelstein","Jens Ingwersen"],"type":"scatter","mode":"markers","marker":{"autocolorscale":false,"color":"rgba(96,96,96,1)","opacity":0.2,"size":[4.74010059341807,13.7189567229163,5.43439189641413,16.4076317722641,6.6917460483755,4.54415261224792,12.6536789837709,5.45304289418314,13.549463713215,4.57406800945584,8.90151111135453,18.2442614929729,15.5068139676194,10.897132640127,14.2497524162862,16.0361672257285,9.96202969744881,7.26887536310115,8.16916377818888,9.15505480560379,8.0315443058401,10.5765928823319,6.55410691332198,12.508161923115,11.112980495075,8.94240285891183,9.14907764878643,9.146392257914,4.19601614020582,4.73599539591109],"symbol":"circle","line":{"width":1.88976377952756,"color":"rgba(96,96,96,1)"}},"hoveron":"points","name":"G_49","legendgroup":"G_49","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"x":[6,8,15,16,17,20,21,25,28,30,34,35,36,38,39,40,41,43,45,46,49,50,53,54,55,57,59,60,61,65,69,70,71,73,75,78],"y":[0.0699523052464229,0.0437062937062937,0.0119940029985007,0.0608108108108108,0.0479192938209332,0.130536130536131,0.03125,0.0016366612111293,0.00611620795107034,0.0266479663394109,0.0131004366812227,0.0455840455840456,0.0085995085995086,0.0701058201058201,0.016750418760469,0.0676470588235294,0.0451612903225806,0.0670391061452514,0.0610561056105611,0.0249520153550864,0.0790229885057471,0.0460606060606061,0.0226364846870839,0.0748387096774194,0.00163398692810458,0.0376344086021505,0.0342857142857143,0.0300546448087432,0.0015600624024961,0.0602564102564103,0.0278592375366569,0.0775316455696203,0.0415430267062315,0.0298953662182362,0.0365344467640919,0.0509337860780985],"text":["Charity Evans","Yinshan Zhao","Hans-Peter Hartung","Huah Shin Ng","Sven Meuth","Feng Zhu","Huah Shin Ng","Helen Tremlett","Charity Evans","Ruth Ann Marrie","Helen Tremlett","Charity Evans","Marius Ringelstein","Philipp Albrecht","Joachim Havla","Ruth Ann Marrie","Jens Ingwersen","Joachim Havla","Helen Tremlett","Yinshan Zhao","José Wijnands","Sven Meuth","Jens Ingwersen","Sven Meuth","Yinshan Zhao","Huah Shin Ng","Yinshan Zhao","José Wijnands","José Wijnands","Helen Tremlett","Joachim Havla","Ruth Ann Marrie","Charity Evans","Joachim Havla","John Fisk","Hans-Peter Hartung"],"type":"scatter","mode":"markers","marker":{"autocolorscale":false,"color":"rgba(246,246,246,1)","opacity":0.2,"size":[13.4961012018315,9.84939989312911,5.43939205139686,12.2260176226308,10.4348150270089,21.9128056667964,8.11830203560116,3.95464482307308,4.61671517822597,7.47857666052025,5.59363167221089,10.1103253604054,4.96532319821459,13.5174295953287,6.10194465793187,13.1758234021177,10.0515813681304,13.0913574992202,12.2600985614442,7.2427847500333,14.7563093464039,10.1765455184453,6.92080443890538,14.1749828719602,3.95416220893596,9.00562439221815,8.54023291587969,7.95214891162427,3.94058833899359,12.1489897843011,7.64696802028674,14.549116089854,9.54879229819522,7.93000877117021,8.85275897645134,10.8536766861957],"symbol":"circle","line":{"width":1.88976377952756,"color":"rgba(246,246,246,1)"}},"hoveron":"points","name":"G_5","legendgroup":"G_5","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"x":[7,13,15,16,18,21,26,27,29,36,38,39,44,45,51,52,55,56,57,60,61,63,65,67,68,74,77],"y":[0.0652482269503546,0.03125,0.0389805097451274,0.0378378378378378,0.0196078431372549,0.0340909090909091,0.0810810810810811,0.00542740841248304,0.0741258741258741,0.0724815724815725,0.0555555555555556,0.0469011725293132,0.0210772833723653,0.0742574257425743,0.0661290322580645,0.0863422291993721,0.0294117647058824,0.0141242937853107,0.00403225806451613,0.0587431693989071,0.0109204368174727,0.039647577092511,0.0102564102564103,0.00972972972972973,0.0771704180064309,0.0547504025764895,0.0507936507936508],"text":["Huah Shin Ng","Charity Evans","Ruth Ann Marrie","Helen Tremlett","Ruth Ann Marrie","Ruth Ann Marrie","José Wijnands","Markus Krämer","Yinshan Zhao","Jens Ingwersen","Helen Tremlett","Yinshan Zhao","Hans-Peter Hartung","Orhan Aktas","Markus Krämer","Markus Krämer","John Fisk","Philipp Albrecht","Helen Tremlett","Feng Zhu","Charity Evans","Feng Zhu","Marius Ringelstein","Sven Meuth","Sven Meuth","Helen Tremlett","José Wijnands"],"type":"scatter","mode":"markers","marker":{"autocolorscale":false,"color":"rgba(179,179,179,1)","opacity":0.2,"size":[12.842540606316,8.11830203560116,9.19269196454121,9.03389525475224,6.49955330581129,8.51315828588701,15.0422403904522,4.5194179416566,14.0759472394205,13.8475004773797,11.4958487162385,10.2933450461618,6.70395508092101,14.0942239759846,12.9649160386113,15.7731670492639,7.86278600472849,5.73628480653694,4.32058716490583,11.9387405675828,5.28962981854571,9.28539251317678,5.19693237757755,5.12336406955172,14.4989303993897,11.3839781905651,10.8342052293163],"symbol":"circle","line":{"width":1.88976377952756,"color":"rgba(179,179,179,1)"}},"hoveron":"points","name":"G_50","legendgroup":"G_50","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"x":[2,4,7,8,11,12,13,16,23,26,30,36,38,40,41,42,52,53,54,56,59,60,61,62,65,66,73,75,76,79],"y":[0.0517711171662125,0.0520156046814044,0.0425531914893617,0.0926573426573427,0.0194319880418535,0.0256410256410256,0.0125,0.0189189189189189,0.0507859733978235,0.00568990042674253,0.0476858345021038,0.0503685503685504,0.0674603174603175,0.0852941176470588,0.0758064516129032,0.0249728555917481,0.0753532182103611,0.051930758988016,0.0516129032258065,0.0550847457627119,0.0457142857142857,0.0245901639344262,0.0858034321372855,0.0192,0.0525641025641026,0.0306666666666667,0.077727952167414,0.0198329853862213,0.0844370860927152,0.0608519269776876],"text":["José Wijnands","Orhan Aktas","Marius Ringelstein","Markus Krämer","Markus Krämer","Charity Evans","Joachim Havla","Joachim Havla","Huah Shin Ng","Ruth Ann Marrie","Hans-Peter Hartung","Yinshan Zhao","José Wijnands","José Wijnands","John Fisk","Huah Shin Ng","Yinshan Zhao","Jens Ingwersen","Helen Tremlett","Yinshan Zhao","Jens Ingwersen","Jens Ingwersen","Marius Ringelstein","Yinshan Zhao","Orhan Aktas","Sven Meuth","Marius Ringelstein","Huah Shin Ng","Feng Zhu","Charity Evans"],"type":"scatter","mode":"markers","marker":{"autocolorscale":false,"color":"rgba(0,0,0,1)","opacity":0.2,"size":[10.9700213412179,11.0039920055567,9.68916594437081,16.650511649929,6.47508880843218,7.33858249966715,5.50994112859732,6.40370825690556,10.8331384731881,4.55654374676398,10.4023755192283,10.7751384197089,13.1498785110409,15.6275543973229,14.3094328524703,7.24568237490055,14.2464644308896,10.9922030077621,10.9480380462988,11.4304329715203,10.1284228304939,7.1924722711541,15.698312770214,6.44281426039487,11.0802035886212,8.0372202508456,14.576389135217,6.5308735940445,15.5084880198177,12.2317302519206],"symbol":"circle","line":{"width":1.88976377952756,"color":"rgba(0,0,0,1)"}},"hoveron":"points","name":"G_51","legendgroup":"G_51","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"x":[3,4,5,7,9,15,17,19,20,21,23,24,32,34,36,37,38,39,41,42,44,45,48,51,62,63,65,66,67,68,76,77,78,79,80],"y":[0.0731707317073171,0.0767230169050715,0.00420168067226891,0.0368794326241135,0.0716332378223496,0.00149925037481259,0.0138713745271122,0.0126050420168067,0.116550116550117,0.0639204545454545,0.00967351874244256,0.0405727923627685,0.0389344262295082,0.00291120815138282,0.0528255528255528,0.0595567867036011,0.0198412698412698,0.0619765494137353,0.00161290322580645,0.0434310532030402,0.053864168618267,0.0511551155115512,0.0524642289348172,0.0612903225806452,0.0736,0.0558002936857562,0.0512820512820513,0.00933333333333333,0.0410810810810811,0.0466237942122186,0.0231788079470199,0.0349206349206349,0.0118845500848896,0.0831643002028398,0.0487465181058496],"text":["Marius Ringelstein","John Fisk","Hans-Peter Hartung","John Fisk","Sven Meuth","Helen Tremlett","Yinshan Zhao","Hans-Peter Hartung","Sven Meuth","Feng Zhu","Huah Shin Ng","Huah Shin Ng","John Fisk","Feng Zhu","José Wijnands","Jens Ingwersen","Huah Shin Ng","Ruth Ann Marrie","Markus Krämer","Yinshan Zhao","Sven Meuth","Hans-Peter Hartung","Charity Evans","Feng Zhu","Marius Ringelstein","Feng Zhu","Markus Krämer","Marius Ringelstein","Charity Evans","Yinshan Zhao","Philipp Albrecht","Helen Tremlett","John Fisk","Feng Zhu","Charity Evans"],"type":"scatter","mode":"markers","marker":{"autocolorscale":false,"color":"rgba(250,250,250,1)","opacity":0.2,"size":[13.9432471444403,14.4367724772753,4.34491849960123,8.90070321707211,13.729638897265,3.92902759862414,5.70105158271244,5.52458410601002,19.9698227419718,12.6580646163615,5.11550973865831,9.41396540186077,9.18628782138995,4.15705650264542,11.1165309438349,12.0517845087092,6.5320260531351,12.3879834671384,3.9503378861924,9.81115297037962,11.2608413219585,10.884429826786,11.0663265716624,12.292640323717,14.0028864013666,11.5298532988326,10.9020671920008,5.06796398721402,9.48459909982916,10.254802516928,6.99622141561559,8.62847517619673,5.4241285891765,15.331661042898,10.5497584333526],"symbol":"circle","line":{"width":1.88976377952756,"color":"rgba(250,250,250,1)"}},"hoveron":"points","name":"G_52","legendgroup":"G_52","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"x":[1,2,3,7,8,9,11,13,17,19,26,28,37,38,39,41,42,43,44,46,47,54,55,56,62,64,66,72,73,75,76,77,78,80],"y":[0.0353130016051364,0.050408719346049,0.0636856368563686,0.075177304964539,0.0192307692307692,0.0487106017191977,0.0852017937219731,0.0625,0.0100882723833544,0.0686274509803922,0.0654338549075391,0.0856269113149847,0.0803324099722992,0.00529100529100529,0.0603015075376884,0.00483870967741936,0.0369163952225842,0.0167597765363128,0.0257611241217799,0.0825335892514395,0.0814285714285714,0.0670967741935484,0.0261437908496732,0.0833333333333333,0.0272,0.04,0.068,0.0667574931880109,0.0164424514200299,0.0490605427974948,0.021523178807947,0.0142857142857143,0.0390492359932088,0.00835654596100279],"text":["Ruth Ann Marrie","Sven Meuth","Charity Evans","Orhan Aktas","Hans-Peter Hartung","José Wijnands","Helen Tremlett","Feng Zhu","John Fisk","John Fisk","Philipp Albrecht","Sven Meuth","John Fisk","Ruth Ann Marrie","Yinshan Zhao","Ruth Ann Marrie","Markus Krämer","Orhan Aktas","Marius Ringelstein","John Fisk","John Fisk","Hans-Peter Hartung","Charity Evans","Helen Tremlett","Joachim Havla","Orhan Aktas","Huah Shin Ng","Philipp Albrecht","John Fisk","Huah Shin Ng","Sven Meuth","Helen Tremlett","Huah Shin Ng","Jens Ingwersen"],"type":"scatter","mode":"markers","marker":{"autocolorscale":false,"color":"rgba(92,92,92,1)","opacity":0.2,"size":[8.68300618760063,10.780719823692,12.6254397746592,14.2220245105187,6.44709499066942,10.5447678446433,15.6147279526059,12.4607105645568,5.17345098442494,13.3120338036549,12.8683310185535,15.673788978347,14.9382275692578,4.50009898955966,12.1552555616841,4.43588540498697,8.90584005455073,6.10324715441893,7.35528015455866,15.2440367917786,15.0905171440936,13.0993696171729,7.40848262147503,15.3551446849005,7.55532194657836,9.33436733299979,13.2248591997813,13.0522315414967,6.05907747788135,10.5933921521289,6.76597264231114,5.75876986148403,9.2022427173471,4.9313124118596],"symbol":"circle","line":{"width":1.88976377952756,"color":"rgba(92,92,92,1)"}},"hoveron":"points","name":"G_53","legendgroup":"G_53","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"x":[2,3,6,8,10,12,18,20,22,23,24,25,26,27,31,38,44,49,50,60,61,64,72,75,76,79,80],"y":[0.0640326975476839,0.0121951219512195,0.0794912559618442,0.0576923076923077,0.00715563506261181,0.0211161387631976,0.0728291316526611,0.102564102564103,0.0208333333333333,0.0253929866989117,0.0119331742243437,0.0490998363338789,0.0284495021337127,0.0108548168249661,0.0712209302325581,0.0502645502645503,0.00585480093676815,0.00574712643678161,0.063030303030303,0.00546448087431694,0.0062402496099844,0.072258064516129,0.0272479564032698,0.0511482254697286,0.0364238410596026,0.0791075050709939,0.0752089136490251],"text":["Helen Tremlett","Orhan Aktas","Hans-Peter Hartung","Philipp Albrecht","Jens Ingwersen","Helen Tremlett","Marius Ringelstein","Feng Zhu","Ruth Ann Marrie","Jens Ingwersen","Marius Ringelstein","Ruth Ann Marrie","Helen Tremlett","John Fisk","Markus Krämer","Helen Tremlett","Helen Tremlett","José Wijnands","Hans-Peter Hartung","Orhan Aktas","José Wijnands","Hans-Peter Hartung","Hans-Peter Hartung","Orhan Aktas","Jens Ingwersen","Markus Krämer","Ruth Ann Marrie"],"type":"scatter","mode":"markers","marker":{"autocolorscale":false,"color":"rgba(119,119,119,1)","opacity":0.2,"size":[12.6736592997826,5.46743580451933,14.8213659099196,11.7927331679915,4.76294267093436,6.70935942533245,13.8957877918814,18.026820839999,6.67002383062829,7.30409648256457,5.43090947112749,10.5988519785377,7.72902299931798,5.28047181343859,13.6723557086405,10.7606877916808,4.57983552757403,4.56462933698863,12.5343895525008,4.52466527820941,4.63419820080005,13.8164478995062,7.56198887134356,10.8834724745002,8.83738752513609,14.7680512676867,14.2264159585352],"symbol":"circle","line":{"width":1.88976377952756,"color":"rgba(119,119,119,1)"}},"hoveron":"points","name":"G_54","legendgroup":"G_54","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"x":[1,3,6,8,9,14,16,18,22,25,26,28,29,30,33,38,39,42,43,45,46,47,54,57,59,64,68,69,70,75,77,80],"y":[0.0192616372391653,0.010840108401084,0.0763116057233704,0.0104895104895105,0.0744985673352436,0.0681818181818182,0.0162162162162162,0.0826330532212885,0.0680555555555555,0.00654664484451719,0.0170697012802276,0.0825688073394495,0.0293706293706294,0.0631136044880785,0.0933572710951526,0.0343915343915344,0.0686767169179229,0.0499457111834962,0.0516759776536313,0.0198019801980198,0.00383877159309021,0.0742857142857143,0.047741935483871,0.0685483870967742,0.0157142857142857,0.0451612903225806,0.0337620578778135,0.0366568914956012,0.0569620253164557,0.0240083507306889,0.026984126984127,0.0292479108635097],"text":["Ruth Ann Marrie","Yinshan Zhao","Ruth Ann Marrie","Charity Evans","Philipp Albrecht","John Fisk","Sven Meuth","Sven Meuth","José Wijnands","José Wijnands","Feng Zhu","Orhan Aktas","Orhan Aktas","Hans-Peter Hartung","Helen Tremlett","Hans-Peter Hartung","Feng Zhu","Yinshan Zhao","Feng Zhu","Marius Ringelstein","Charity Evans","Charity Evans","Markus Krämer","Helen Tremlett","Orhan Aktas","Feng Zhu","Charity Evans","Helen Tremlett","Helen Tremlett","Yinshan Zhao","Joachim Havla","José Wijnands"],"type":"scatter","mode":"markers","marker":{"autocolorscale":false,"color":"rgba(59,59,59,1)","opacity":0.2,"size":[6.45138944291951,5.27841901754265,14.379614614682,5.2294795029666,14.1277262566236,13.2501200417739,6.02758485359989,15.2578552617134,13.2325777920733,4.67734135212397,6.14638359921897,15.248929620019,7.85706794634228,12.5459632349011,16.7477506460583,8.55494006231718,13.318878535405,10.7163855921517,10.9568020292062,6.52656041843828,4.29270919806259,14.0981541606041,10.4101708381572,13.3010491108074,5.95770796685088,10.0515813681304,8.46745319391327,8.8697757147379,11.6912667560505,7.11157307788725,7.52531094874336,7.84000927727136],"symbol":"circle","line":{"width":1.88976377952756,"color":"rgba(59,59,59,1)"}},"hoveron":"points","name":"G_55","legendgroup":"G_55","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"x":[1,2,3,4,10,13,15,18,21,22,24,25,28,32,33,35,38,42,51,52,53,54,55,58,59,62,63,65,66,70,79,80],"y":[0.0754414125200642,0.0367847411444142,0.00948509485094851,0.0156046814044213,0.0608228980322004,0.0109375,0.0869565217391304,0.0112044817927171,0.0397727272727273,0.0430555555555556,0.0883054892601432,0.0621931260229133,0.0443425076452599,0.0450819672131148,0.0556552962298025,0.0541310541310541,0.0238095238095238,0.0293159609120521,0.00806451612903226,0.0251177394034537,0.0372836218375499,0.0774193548387097,0.0130718954248366,0.032626427406199,0.0785714285714286,0.0912,0.0499265785609398,0.0461538461538462,0.0173333333333333,0.0395569620253165,0.0283975659229209,0.0807799442896936],"text":["Charity Evans","John Fisk","Marius Ringelstein","Hans-Peter Hartung","Ruth Ann Marrie","Marius Ringelstein","Hans-Peter Hartung","John Fisk","Yinshan Zhao","José Wijnands","José Wijnands","Huah Shin Ng","Hans-Peter Hartung","Hans-Peter Hartung","Huah Shin Ng","Huah Shin Ng","Marius Ringelstein","Hans-Peter Hartung","Charity Evans","Markus Krämer","José Wijnands","Orhan Aktas","Hans-Peter Hartung","Joachim Havla","Joachim Havla","Joachim Havla","Huah Shin Ng","Marius Ringelstein","Sven Meuth","Orhan Aktas","Huah Shin Ng","Helen Tremlett"],"type":"scatter","mode":"markers","marker":{"autocolorscale":false,"color":"rgba(147,147,147,1)","opacity":0.2,"size":[14.258717409171,8.88754355137892,5.08917739240458,5.94244798080882,12.2276970063147,5.29201109332821,15.858509720148,5.32926574003359,9.30278417369796,9.75897426964119,16.0459192977942,12.4180741757966,9.9378065100885,10.0405589863989,11.5097069636071,11.2979235342851,7.08392601692766,7.84946868694174,4.89041213003241,7.26582689228263,8.95687475792919,14.5335154358965,5.58965409491947,8.30961525094691,14.6935739010975,16.4480470256829,10.7137271397909,10.1895015947976,6.18307453935042,9.27280004662214,7.7218032387194,15.0004034979191],"symbol":"circle","line":{"width":1.88976377952756,"color":"rgba(147,147,147,1)"}},"hoveron":"points","name":"G_56","legendgroup":"G_56","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"x":[4,9,11,15,16,23,24,28,29,31,38,39,43,44,47,48,49,51,56,64,68,70,72,73,77,80],"y":[0.0390117035110533,0.0773638968481375,0.0612855007473842,0.0809595202398801,0.0527027027027027,0.0169286577992745,0.0501193317422434,0.0259938837920489,0.00979020979020979,0.0247093023255814,0.0753968253968254,0.0737018425460637,0.0293296089385475,0.0562060889929742,0.0314285714285714,0.0572337042925278,0.0158045977011494,0.0903225806451613,0.0494350282485876,0.0167741935483871,0.0257234726688103,0.0126582278481013,0.0245231607629428,0.0657698056801196,0.0317460317460317,0.020891364902507],"text":["Jens Ingwersen","Huah Shin Ng","Feng Zhu","John Fisk","Ruth Ann Marrie","Marius Ringelstein","Feng Zhu","Sven Meuth","Feng Zhu","John Fisk","Jens Ingwersen","John Fisk","John Fisk","Helen Tremlett","José Wijnands","Philipp Albrecht","Marius Ringelstein","Markus Krämer","Feng Zhu","Markus Krämer","Jens Ingwersen","Feng Zhu","Joachim Havla","Jens Ingwersen","José Wijnands","Hans-Peter Hartung"],"type":"scatter","mode":"markers","marker":{"autocolorscale":false,"color":"rgba(83,83,83,1)","opacity":0.2,"size":[9.19702690291514,14.5258106050224,12.2919703856416,15.0253519628122,11.0994614724853,6.1267530326911,10.7405099167139,7.38764107234149,5.13181432592869,7.20903763422652,14.2525228482722,14.017035616311,7.85136585010019,11.5862354896743,8.14312264766306,11.7290142472182,5.97028156691136,16.3261493544805,10.6454267259267,6.10525383378834,7.35004537307604,5.53199794912829,7.18315588355171,12.9150066393903,8.18724779734852,6.67809558786954],"symbol":"circle","line":{"width":1.88976377952756,"color":"rgba(83,83,83,1)"}},"hoveron":"points","name":"G_57","legendgroup":"G_57","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"x":[2,7,9,12,13,15,16,17,22,24,27,28,33,36,37,39,40,42,47,48,50,51,52,56,57,59,62,64,67,71,73,74,78],"y":[0.0626702997275204,0.0595744680851064,0.0730659025787966,0.028657616892911,0.0421875,0.0374812593703148,0.0310810810810811,0.00378310214375788,0.0513888888888889,0.136038186157518,0.00407055630936228,0.0657492354740061,0.0700179533213645,0.0479115479115479,0.0623268698060942,0.0418760469011725,0.0720588235294118,0.0271444082519001,0.0242857142857143,0.0158982511923688,0.00848484848484849,0.017741935483871,0.0879120879120879,0.0819209039548023,0.00806451612903226,0.0514285714285714,0.0832,0.0696774193548387,0.0367567567567568,0.086053412462908,0.070254110612855,0.0257648953301127,0.0594227504244482],"text":["Orhan Aktas","Hans-Peter Hartung","Marius Ringelstein","Yinshan Zhao","Feng Zhu","Charity Evans","Feng Zhu","Feng Zhu","Joachim Havla","Feng Zhu","Joachim Havla","Marius Ringelstein","Hans-Peter Hartung","Sven Meuth","Orhan Aktas","José Wijnands","Orhan Aktas","Ruth Ann Marrie","John Fisk","John Fisk","José Wijnands","Hans-Peter Hartung","Orhan Aktas","Joachim Havla","Charity Evans","Yinshan Zhao","Huah Shin Ng","José Wijnands","Yinshan Zhao","Joachim Havla","Sven Meuth","Markus Krämer","John Fisk"],"type":"scatter","mode":"markers","marker":{"autocolorscale":false,"color":"rgba(123,123,123,1)","opacity":0.2,"size":[12.4843716051783,12.0542411534903,13.9286829754581,7.75795328723731,9.63834927884101,8.98434093885058,8.09482293247272,4.28466815485516,10.9169119603597,22.6771653543307,4.32609339492776,12.9121487011556,13.5052219356512,10.4337387229801,12.4366562472019,9.59506939367364,13.7887667829972,7.54759353039833,7.15014000583018,5.98332005230856,4.94927453017158,6.23993768315029,15.9912648139239,15.1589167302708,4.89041213003241,10.9224257282156,15.3366207887139,13.4579102508643,8.88365444032731,15.7330421757488,13.5380321401808,7.35580447497274,12.0331615490334],"symbol":"circle","line":{"width":1.88976377952756,"color":"rgba(123,123,123,1)"}},"hoveron":"points","name":"G_58","legendgroup":"G_58","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"x":[3,6,9,11,17,18,21,24,25,31,36,37,40,45,47,48,49,50,51,52,53,55,58,59,64,69,70,71,75,77,79,80],"y":[0.002710027100271,0.0317965023847377,0.0759312320916905,0.0284005979073244,0.0680958385876419,0.00560224089635854,0.0610795454545455,0.00238663484486874,0.00490998363338789,0.00726744186046512,0.0737100737100737,0.0373961218836565,0.0205882352941176,0.0165016501650165,0.02,0.027027027027027,0.0818965517241379,0.0424242424242424,0.0854838709677419,0.021978021978022,0.0239680426098535,0.0310457516339869,0.0114192495921697,0.0528571428571429,0.0412903225806452,0.0190615835777126,0.0680379746835443,0.00890207715133531,0.0271398747390397,0.0603174603174603,0.0446247464503043,0.0835654596100279],"text":["Ruth Ann Marrie","Joachim Havla","Ruth Ann Marrie","Yinshan Zhao","Philipp Albrecht","José Wijnands","Yinshan Zhao","Ruth Ann Marrie","Sven Meuth","José Wijnands","Ruth Ann Marrie","Yinshan Zhao","John Fisk","José Wijnands","Charity Evans","Feng Zhu","Sven Meuth","Yinshan Zhao","Helen Tremlett","Feng Zhu","Philipp Albrecht","Joachim Havla","Huah Shin Ng","Philipp Albrecht","John Fisk","Feng Zhu","Sven Meuth","Markus Krämer","Hans-Peter Hartung","Marius Ringelstein","Markus Krämer","Joachim Havla"],"type":"scatter","mode":"markers","marker":{"autocolorscale":false,"color":"rgba(248,248,248,1)","opacity":0.2,"size":[4.12695227174626,8.19426288011152,14.3267687858849,7.72222472166263,13.238174500563,4.54415261224792,12.2633552606224,4.0776820080176,4.44602183256377,4.77864000293284,14.0181791903462,8.97250918384755,6.63593189661842,6.06731782971152,6.55410691332198,7.53127500689429,15.1555334849362,9.67124715052588,15.6539165767166,6.8292315823318,7.1059682330831,8.08991225223876,5.35922877521602,11.120920233957,9.51367591453546,6.42355699794366,13.2301351997364,5.00765786934251,7.54696327622033,12.1574720268164,9.97702544566477,15.3873937967042],"symbol":"circle","line":{"width":1.88976377952756,"color":"rgba(248,248,248,1)"}},"hoveron":"points","name":"G_59","legendgroup":"G_59","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"x":[5,6,7,8,15,19,20,21,24,27,28,44,45,48,52,57,58,61,62,63,64,67,69,73,74,75,76,78,80],"y":[0.0735294117647059,0.0476947535771065,0.0524822695035461,0.0244755244755245,0.00749625187406297,0.0546218487394958,0.0303030303030303,0.00426136363636364,0.107398568019093,0.00135685210312076,0.0321100917431193,0.0398126463700234,0.0858085808580858,0.0349761526232114,0.0706436420722135,0.0161290322580645,0.0277324632952692,0.0093603744149766,0.016,0.0469897209985316,0.0283870967741936,0.0648648648648649,0.0762463343108504,0.0284005979073244,0.037037037037037,0.00104384133611691,0.0562913907284768,0.0967741935483871,0.0125348189415042],"text":["Helen Tremlett","Orhan Aktas","José Wijnands","Philipp Albrecht","Huah Shin Ng","Sven Meuth","Feng Zhu","Joachim Havla","Orhan Aktas","Hans-Peter Hartung","Helen Tremlett","Philipp Albrecht","Markus Krämer","Marius Ringelstein","Philipp Albrecht","José Wijnands","Joachim Havla","Marius Ringelstein","Joachim Havla","Sven Meuth","Sven Meuth","Jens Ingwersen","Charity Evans","Joachim Havla","Feng Zhu","Philipp Albrecht","Marius Ringelstein","Sven Meuth","José Wijnands"],"type":"scatter","mode":"markers","marker":{"autocolorscale":false,"color":"rgba(157,157,157,1)","opacity":0.2,"size":[13.9930794160976,10.4036148389064,11.0688332329016,7.17653231650134,4.8107486213862,11.3661164552878,7.98667486266517,4.35347396446712,18.6984498020712,3.8999500106982,8.23784944614441,9.30833157596381,15.6990280747079,8.63619104373764,13.5921511310949,6.01544809920043,7.62934432591797,5.0717441355478,5.99748519494338,10.305649091317,7.72034789843691,12.7892777387996,14.3705463716085,7.72222472166263,8.92260609274892,3.77952755905512,11.5980875031243,17.2224523454585,5.51479502358703],"symbol":"circle","line":{"width":1.88976377952756,"color":"rgba(157,157,157,1)"}},"hoveron":"points","name":"G_6","legendgroup":"G_6","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"x":[1,6,9,14,16,17,18,22,23,27,31,35,40,42,44,47,51,57,65,68,69,70,72,74,75,79],"y":[0.0224719101123595,0.0890302066772655,0.0845272206303725,0.0484848484848485,0.05,0.0290037831021438,0.0644257703081232,0.0305555555555556,0.0725513905683192,0.0217096336499322,0.0857558139534884,0.0811965811965812,0.0647058823529412,0.0456026058631922,0.0573770491803279,0.03,0.05,0.0268817204301075,0.05,0.0546623794212219,0.0205278592375367,0.0806962025316456,0.0626702997275204,0.0273752012882448,0.0417536534446764,0.00608519269776876],"text":["John Fisk","Helen Tremlett","Helen Tremlett","Charity Evans","Markus Krämer","Marius Ringelstein","Marius Ringelstein","Philipp Albrecht","Yinshan Zhao","Orhan Aktas","Yinshan Zhao","Hans-Peter Hartung","Ruth Ann Marrie","Helen Tremlett","Markus Krämer","Charity Evans","Feng Zhu","John Fisk","Markus Krämer","José Wijnands","Markus Krämer","Huah Shin Ng","Feng Zhu","Marius Ringelstein","Sven Meuth","Sven Meuth"],"type":"scatter","mode":"markers","marker":{"autocolorscale":false,"color":"rgba(242,242,242,1)","opacity":0.2,"size":[6.89791749296435,16.1466027897694,15.521010312841,10.5133993512282,10.7239289483041,7.80607366121271,12.728271513796,8.02177590159647,13.8572004925868,6.79190488614566,15.6916972430307,15.0582867985802,12.7671892904916,10.1129043989187,11.7489307804067,7.94455315644401,10.7239289483041,7.51107410719637,10.7239289483041,11.3717479365176,6.62753372440723,14.9887692625074,12.4843716051783,7.57967843978902,9.57806140195182,4.6123421031471],"symbol":"circle","line":{"width":1.88976377952756,"color":"rgba(242,242,242,1)"}},"hoveron":"points","name":"G_60","legendgroup":"G_60","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"x":[8,9,13,19,21,22,30,33,34,36,38,43,44,45,46,47,48,50,51,53,65,66,67,69,72,77,78,80],"y":[0.020979020979021,0.0100286532951289,0.025,0.0672268907563025,0.00994318181818182,0.0152777777777778,0.0799438990182328,0.059245960502693,0.00145560407569141,0.0442260442260442,0.0515873015873016,0.0544692737430168,0.0491803278688525,0.0181518151815182,0.0921305182341651,0.0328571428571429,0.0508744038155803,0.023030303030303,0.0919354838709677,0.0532623169107856,0.0551282051282051,0.0626666666666667,0.0378378378378378,0.0249266862170088,0.0313351498637602,0.00634920634920635,0.0696095076400679,0.0668523676880223],"text":["John Fisk","Feng Zhu","Charity Evans","Hans-Peter Hartung","Markus Krämer","Philipp Albrecht","José Wijnands","Feng Zhu","Sven Meuth","Yinshan Zhao","Sven Meuth","John Fisk","Marius Ringelstein","Hans-Peter Hartung","Hans-Peter Hartung","Orhan Aktas","Charity Evans","Helen Tremlett","Feng Zhu","Helen Tremlett","Huah Shin Ng","Yinshan Zhao","José Wijnands","Philipp Albrecht","John Fisk","Huah Shin Ng","Charity Evans","Charity Evans"],"type":"scatter","mode":"markers","marker":{"autocolorscale":false,"color":"rgba(222,222,222,1)","opacity":0.2,"size":[6.69028778626602,5.16512383935111,7.24945652494552,13.1174473729908,5.15318487901081,5.89693094871028,14.8842517072119,12.008598391472,3.9204580042633,9.92162311291958,10.9444807821458,11.3449171132525,10.6100362497076,6.29697404471402,16.5773214232645,8.34168215089596,10.8454256680319,6.97557027744369,16.550225837381,11.1772172218138,11.4364713562919,12.4838668364985,9.03389525475224,7.2392629829529,8.13013749691509,4.64954680862249,13.4484750107291,13.0654129553614],"symbol":"circle","line":{"width":1.88976377952756,"color":"rgba(222,222,222,1)"}},"hoveron":"points","name":"G_7","legendgroup":"G_7","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"x":[2,4,5,12,16,20,25,26,29,36,37,38,39,43,46,49,52,55,57,61,62,68,71,72,78,80],"y":[0.0776566757493188,0.0533159947984395,0.102941176470588,0.0874811463046757,0.0554054054054054,0.00233100233100233,0.0752864157119476,0.00711237553342817,0.0545454545454545,0.0233415233415233,0.0650969529085873,0.0171957671957672,0.0435510887772194,0.0460893854748603,0.00575815738963532,0.0617816091954023,0.0156985871271586,0.0408496732026144,0.0228494623655914,0.0234009360374415,0.0016,0.00482315112540193,0.0845697329376855,0.0803814713896458,0.0067911714770798,0.0153203342618384],"text":["Charity Evans","Orhan Aktas","Hans-Peter Hartung","Orhan Aktas","Joachim Havla","Ruth Ann Marrie","Charity Evans","John Fisk","Ruth Ann Marrie","Sven Meuth","Jens Ingwersen","Feng Zhu","Hans-Peter Hartung","Marius Ringelstein","Hans-Peter Hartung","Marius Ringelstein","Philipp Albrecht","Helen Tremlett","Marius Ringelstein","Marius Ringelstein","Marius Ringelstein","Joachim Havla","Ruth Ann Marrie","Markus Krämer","Markus Krämer","Jens Ingwersen"],"type":"scatter","mode":"markers","marker":{"autocolorscale":false,"color":"rgba(208,208,208,1)","opacity":0.2,"size":[14.5664866422653,11.1846754939502,18.0792060108553,15.9313948952634,11.4749864191552,4.06906367139493,14.2371834497641,4.75686774817003,11.3555019622711,7.0188483585524,12.8215231769677,6.16392905810103,9.82783291383646,10.180544532273,4.56618760650781,12.3608988486198,5.95552231354184,9.45244186837738,6.95042214977794,7.02711011404799,3.94797969464342,4.43367174354082,15.5269165006282,14.9450436732663,4.71173464839869,5.90285663209303],"symbol":"circle","line":{"width":1.88976377952756,"color":"rgba(208,208,208,1)"}},"hoveron":"points","name":"G_8","legendgroup":"G_8","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"x":[1,2,4,7,8,10,12,13,16,17,18,19,20,21,22,23,26,28,29,35,37,40,44,45,47,49,54,55,56,57,61,64,65,66,69,74,75,76,77],"y":[0.0176565008025682,0.00408719346049046,0.0169050715214564,0.0283687943262411,0.0629370629370629,0.0178890876565295,0.0739064856711916,0.0859375,0.0486486486486487,0.073139974779319,0.0686274509803922,0.0658263305322129,0.111888111888112,0.0596590909090909,0.0722222222222222,0.026602176541717,0.0184921763869132,0.0565749235474006,0.0755244755244755,0.0655270655270655,0.074792243767313,0.0867647058823529,0.0292740046838408,0.0973597359735974,0.0514285714285714,0.0172413793103448,0.0593548387096774,0.0326797385620915,0.0677966101694915,0.0618279569892473,0.0499219968798752,0.0658064516129032,0.032051282051282,0.0466666666666667,0.0351906158357771,0.0289855072463768,0.0313152400835073,0.0447019867549669,0.0238095238095238],"text":["Jens Ingwersen","John Fisk","Sven Meuth","Helen Tremlett","Hans-Peter Hartung","Feng Zhu","Helen Tremlett","Yinshan Zhao","Sven Meuth","Philipp Albrecht","Charity Evans","Jens Ingwersen","Huah Shin Ng","Orhan Aktas","Charity Evans","Hans-Peter Hartung","José Wijnands","Yinshan Zhao","José Wijnands","Charity Evans","Sven Meuth","Hans-Peter Hartung","John Fisk","Marius Ringelstein","Philipp Albrecht","Yinshan Zhao","Joachim Havla","José Wijnands","José Wijnands","Hans-Peter Hartung","Markus Krämer","Joachim Havla","Charity Evans","Joachim Havla","Philipp Albrecht","Philipp Albrecht","Charity Evans","Jens Ingwersen","Orhan Aktas"],"type":"scatter","mode":"markers","marker":{"autocolorscale":false,"color":"rgba(193,193,193,1)","opacity":0.2,"size":[6.22804854726925,4.32848421553051,6.12347021149184,7.71780363158684,12.5214350176148,6.26041499345869,14.0454671360444,15.7169386265699,10.5361594498132,13.9389740091313,13.3120338036549,12.9228599643046,19.3221579013448,12.0659986150938,13.8114682289323,7.47221072521175,6.34433337510046,11.6374821413451,14.2702574843896,12.8812813253569,14.1685272781537,15.831861062235,7.84363649527823,17.3037996101327,10.9224257282156,6.17027709144759,12.0237259111874,8.31702493337725,13.1966012898679,12.3673383240425,10.7130905212578,12.9200980711627,8.22967537529728,10.2607597774522,8.66599710551562,7.80353316343596,8.12737012712595,9.98775846949996,7.08392601692766],"symbol":"circle","line":{"width":1.88976377952756,"color":"rgba(193,193,193,1)"}},"hoveron":"points","name":"G_9","legendgroup":"G_9","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null}],"layout":{"margin":{"t":16,"r":0,"b":3.65296803652968,"l":3.65296803652968},"paper_bgcolor":"rgba(255,255,255,1)","font":{"color":null,"family":null,"size":0},"xaxis":{"domain":[0,1],"automargin":true,"type":"linear","autorange":false,"range":[-2.95,83.95],"tickmode":"array","ticktext":["0","20","40","60","80"],"tickvals":[0,20,40,60,80],"categoryorder":"array","categoryarray":["0","20","40","60","80"],"nticks":null,"ticks":"","tickcolor":null,"ticklen":3.65296803652968,"tickwidth":0,"showticklabels":false,"tickfont":{"color":null,"family":null,"size":0},"tickangle":-0,"showline":false,"linecolor":null,"linewidth":0,"showgrid":false,"gridcolor":null,"gridwidth":0,"zeroline":false,"anchor":"y","title":{"text":"","font":{"color":null,"family":null,"size":0}},"hoverformat":".2f"},"yaxis":{"domain":[0,1],"automargin":true,"type":"linear","autorange":false,"range":[-0.00570587590495314,0.142787903398588],"tickmode":"array","ticktext":["0.00","0.05","0.10"],"tickvals":[0,0.05,0.1],"categoryorder":"array","categoryarray":["0.00","0.05","0.10"],"nticks":null,"ticks":"","tickcolor":null,"ticklen":3.65296803652968,"tickwidth":0,"showticklabels":false,"tickfont":{"color":null,"family":null,"size":0},"tickangle":-0,"showline":false,"linecolor":null,"linewidth":0,"showgrid":false,"gridcolor":null,"gridwidth":0,"zeroline":false,"anchor":"x","title":{"text":"","font":{"color":null,"family":null,"size":0}},"hoverformat":".2f"},"shapes":[{"type":"rect","fillcolor":null,"line":{"color":null,"width":0,"linetype":[]},"yref":"paper","xref":"paper","x0":0,"x1":1,"y0":0,"y1":1}],"showlegend":false,"legend":{"bgcolor":"rgba(255,255,255,1)","bordercolor":"transparent","borderwidth":1.88976377952756,"font":{"color":null,"family":null,"size":0}},"hovermode":"closest","barmode":"relative"},"config":{"doubleClick":"reset","modeBarButtonsToAdd":["hoverclosest","hovercompare"],"showSendToCloud":false},"source":"A","attrs":{"64861d813d2":{"x":{},"y":{},"colour":{},"size":{},"text":{},"type":"scatter"}},"cur_data":"64861d813d2","visdat":{"64861d813d2":["function (y) ","x"]},"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.2,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
+<p>I would like to express my sincere appreciation to my collaboration
+partners. My scientific endeavors and accomplishments would not have
+been possible without them. Thank you very much!<br><br></p>
+<p><em>“Gratitude is not only the greatest of virtues, but the parent of
+all others.”</em> <br><br> ― Marcus Tullius Cicero</p>
+<hr />
+</div>
+
+
+
+</div>
+</div>
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.odd').parent('tbody').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- tabsets -->
+
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open');
+  });
+});
+</script>
+
+<!-- code folding -->
+
+<script>
+$(document).ready(function ()  {
+
+    // temporarily add toc-ignore selector to headers for the consistency with Pandoc
+    $('.unlisted.unnumbered').addClass('toc-ignore')
+
+    // move toc-ignore selectors from section div to header
+    $('div.section.toc-ignore')
+        .removeClass('toc-ignore')
+        .children('h1,h2,h3,h4,h5').addClass('toc-ignore');
+
+    // establish options
+    var options = {
+      selectors: "h1,h2,h3",
+      theme: "bootstrap3",
+      context: '.toc-content',
+      hashGenerator: function (text) {
+        return text.replace(/[.\\/?&!#<>]/g, '').replace(/\s/g, '_');
+      },
+      ignoreSelector: ".toc-ignore",
+      scrollTo: 0
+    };
+    options.showAndHide = true;
+    options.smoothScroll = true;
+
+    // tocify
+    var toc = $("#TOC").tocify(options).data("toc-tocify");
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>
