@@ -123,7 +123,7 @@ data.frame(get_profile("J5AuPUQAAAAJ")[4:6]) %>% kable(format = "simple", align 
 ```{r, echo=F, message=FALSE, fig.width = 6, fig.height = 4}
 library(ggplot2)
 library(plotly)
-p<-ggplot(get_citation_history("J5AuPUQAAAAJ")[1:8,], aes(year, cites)) + geom_line() + geom_point()
+p<-ggplot(get_citation_history("J5AuPUQAAAAJ")[1:9,], aes(year, cites)) + geom_line() + geom_point()
 ggplotly(p) %>% layout(margin=list(l = 60,r = 60,b = 60,t = 60,pad = 4))
 
 ```
